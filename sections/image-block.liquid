@@ -1,8 +1,8 @@
 <div>
-  <img src= {{ section.settings.single_image | image_url: width: 500 }} />  
-  
-</div>
+    <img src={{ section.settings.single_image | image_url: width: 500 }}/>
+  	{{ section.settings.single_image_title }}
 
+</div>
 
 
 {% schema %}
@@ -14,11 +14,15 @@
             "type": "image_picker",
             "id": "single_image",
             "label": "Select Image"
+        }, {
+            "type": "text",
+            "id": "single_image_title",
+            "label": "Image Headding"
         }
     ],
     "presets": [
         {
-          "name": "Image Block"
+            "name": "Image Block"
         }
     ]
 }
