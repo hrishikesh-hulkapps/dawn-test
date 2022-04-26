@@ -209,7 +209,8 @@
     "1650980038fc3629f5": {
       "type": "image-block",
       "settings": {
-        "single_image": "shopify:\/\/shop_images\/404.webp"
+        "single_image": "shopify:\/\/shop_images\/404.webp",
+        "single_image_title": "Main Image"
       }
     }
   },
