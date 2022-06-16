@@ -29,9 +29,9 @@ window.onload = function() {
                 document.querySelector('.modal-html').append(doc.querySelector("#MainContent"));
 
                 // load js
-                // var script = document.createElement("script");
-                // script.src = "https://abcapis.com/sample.js"; 
-                // document.getElementsByTagName("head")[0].appendChild(script);
+                var script = document.createElement("script");
+                script.src = "https://cdn.shopify.com/s/files/1/0639/8106/0337/t/4/assets/quickview.js?v=175603321080792910491655366308"; 
+                document.getElementsByTagName("head")[0].appendChild(script);
 
             })
             .catch(error => console.error('Error:', error))
