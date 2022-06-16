@@ -1,36 +1,70 @@
-<div>
-    <img src={{ section.settings.single_image | image_url: width: 500 }}/>
 
-</div>
+{% for block in section.blocks %}
+
+	{% if  block.settings.display_option == false %}
+      <div class="holder">
+          {% if block.settings.single_img %}
+          	{{ block.settings.single_img | image_url: width: 400 | image_tag}}
+          {% endif %}
+	      {% if block.settings.collection_link %} <a href={{ block.settings.collection_link }}> {% endif %}
+            <p> {{ block.settings.single_image_title }} </p>
+          {% if block.settings.collection_link %} </a> {% endif %}
+      </div>
+	{% endif %}
+{% endfor %}
+
 
 
 {% schema %}
 
 {
     "name": "CT Gallery",
-    "settings": [
-        {
-            "type": "image_picker",
-            "id": "single_image",
-            "label": "Select Image"
-        }, {
-            "type": "text",
-            "id": "single_image_title",
-            "label": "Image Headding"
-        }
-    ],
-    "presets": [
-        {
-            "name": "Image Block"
-        }
-    ]
+	"tag": "section",
+	"class": "ct-gallery",
+	"blocks": [
+		{
+			"name": "Image Block",
+			"type": "single_image",
+			"settings": [
+				{
+                    "type": "checkbox",
+                    "id": "display_option",
+                    "label": "Check to Hide"
+              	},
+				{
+					"type": "image_picker",
+                    "id": "single_img",
+                    "label": "Select Image" 
+				}, 
+				{
+                    "type": "text",
+                    "id": "single_image_title",
+                    "label": "Image Headding"
+                },
+				{
+                  "type": "url",
+                  "id": "collection_link",
+                  "label": "Select Link"
+                }	
+			]
+		}
+	]
 }
 
 {% endschema %}
 
 {% stylesheet %}
 
-
+.ct-gallery {
+	max-width: var(--page-width);
+    margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;  
+	justify-content: space-around;
+}
+.holder p {
+    text-align: center;
+}
 
 {% endstylesheet %}
 

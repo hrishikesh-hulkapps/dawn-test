@@ -2,6 +2,9 @@
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'quickview.css' | asset_url | stylesheet_tag }}
+
+
 
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
@@ -26,9 +29,31 @@
   }
 {%- endstyle -%}
 
+<!-- {% render 'template-tag-filter' %} -->
+
+<!-- Modal code -->
+<div class="modal">
+  <div class="modal-content">
+    <div class="row">
+      <div class="col-md-6"> </div>
+      <div class="col-md-6"> <span class="close-button">&times;</span> </div>
+    </div>
+    
+    <div class="modal-html">
+      
+    </div>
+
+  </div>
+</div>
+
+<p>{{ 'quickview.css' | asset_url | stylesheet_tag }}</p>
+
+<!-- {{ 'quickview.js.liquid' | asset_url }} -->
+
 <div class="section-{{ section.id }}-padding">
   {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
   {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
+  <!--  Hide default sort
     <facet-filters-form class="facets facets-vertical-sort page-width small-hide no-js-hidden">
       <form class="facets-vertical-form" id="FacetSortForm">
         <div class="facet-filters sorting caption">
@@ -71,24 +96,53 @@
         </div>  
       </form>
     </facet-filters-form>
+    -->
   {%- endif -%}
+
+  {% comment %} Custom code for sorting {% endcomment %}
+  {% render 'template-collection-sorting' %} 
+
+  {% comment %} Custom code for show no of products {% endcomment %}
+  {%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+  {%- assign pageUrl = contentForQuerystring | split:'"pageurl":"'| last | split:'"' | first |
+  replace:'\/','/' |
+  replace:'%20',' ' |
+  replace:'\u0026','&' -%}
+  
+  {% assign count = section.settings.products_per_page %}
+  
+  {% comment %} Get count {% endcomment %}      
+  {% if pageUrl contains 'count=' %}
+    {% assign count = pageUrl | split:'count=' | last %}
+  {% endif %}
+
+  {% comment %} Render custom no of prducts {% endcomment %}      
+  {% render 'template-custom-number-of-products' %} 
+
 
   <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
     {{ 'component-facets.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
     {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
       <aside aria-labelledby="verticalTitle" class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}" id="main-collection-filters" data-id="{{ section.id }}">
-        {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type %}
+        
+        {% render 'template-topbar-filter' %}
+        <!-- {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type %} -->
       </aside>
     {%- endif -%}
 
+
+
     <div class="product-grid-container" id="ProductGridContainer">
-      {%- paginate collection.products by section.settings.products_per_page -%}
+
+
+      {%- paginate collection.products by count -%}
         {%- if collection.products.size == 0 -%}
           <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
             <div class="loading-overlay gradient"></div>
             <div class="title-wrapper center">
               <h2 class="title title--primary">
+                
                 {{ 'sections.collection_template.empty' | t }}<br>
                 {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
               </h2>
@@ -97,7 +151,12 @@
         {%- else -%}
           <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
             <div class="loading-overlay gradient"></div>
-    
+
+            <!-- <p>page url: {{pageUrl}}</p>
+            <p>count(from url): {{count}}</p>
+            <p>Limit: {{ limit }} </p>
+            <p>section.settings.products_per_page: {{section.settings.products_per_page}}</p> -->
+            
             <ul id="product-grid" data-id="{{ section.id }}" class="
               grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
               grid--{{ section.settings.columns_desktop }}-col-desktop">
@@ -107,6 +166,9 @@
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
                 <li class="grid__item">
+
+                  
+
                   {% render 'card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
@@ -118,6 +180,9 @@
                     section_id: section.id
 
                   %}
+                  
+                  
+
                 </li>
               {%- endfor -%}
             </ul>
@@ -290,3 +355,25 @@
   ]
 }
 {% endschema %}
+
+<style>
+  .sale-badge {
+    border-radius: 20px;
+    width: 40px;
+    text-align: center;
+    background: black;
+    color: #fff;
+    position: absolute;
+    z-index: 555;
+}
+.new-badge {
+    border-radius: 20px;
+    width: 40px;
+    text-align: center;
+    background: rgb(27, 249, 201);
+    color: rgb(0, 0, 0);
+    position: absolute;
+    z-index: 555;
+}
+  
+</style>
