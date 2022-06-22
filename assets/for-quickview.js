@@ -1,4 +1,5 @@
-const form = document.querySelector('.options-form');
+
+// const form = document.querySelector('.options-form');
 const optionsSelect = document.querySelectorAll('.select-option');
 const variantJSON = form.querySelector('[data-variantJSON]');
 const addToCart = document.querySelector('#add-to-cart-btn');
@@ -6,14 +7,12 @@ const addToCart = document.querySelector('#add-to-cart-btn');
 const variantSelect = document.querySelector('#variants');
 const items = document.querySelector('#id');
 
-addToCart.addEventListener('click', submitFormFree.bind(this));
+addToCart.addEventListener('click', submitForm.bind(this));
 
 // set event listners
 optionsSelect.forEach(option => {
     option.addEventListener('change', variantChange.bind(this));
 })    
-
-
 
 
 
@@ -42,8 +41,8 @@ function variantChange(e) {
     });
 
     // update URL        
-    const variantURL = '?variant=' + currentVariant.id;
-    history.replaceState(null, null, variantURL);
+    // const variantURL = '?variant=' + currentVariant.id;
+    // history.replaceState(null, null, variantURL);
 
     // update select hidden 
     variantSelect.value = currentVariant.id;
@@ -80,15 +79,16 @@ function submitFormFree(e) {
 function submitForm(e) {
 
     e.preventDefault();
-    console.log(e);
+    // console.log(e);
+    console.log('via submit form');
     
     let items ;
     const variantSelect = document.querySelector('#variants');
     const quantity = document.querySelector('#quantity');
 
     // get line item properties
-    const lineItemName = document.querySelector('#your-name');
-    const lineItemBirthdate = document.querySelector('#your-birthdate');
+    const lineItemName = document.querySelector('#your-name') || '';
+    const lineItemBirthdate = document.querySelector('#your-birthdate') || '';
 
     // const form = document.querySelector('#add-to-cart');
     // const formData = new FormData(form);
