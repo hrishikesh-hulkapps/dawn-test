@@ -20,6 +20,46 @@ function setListeners() {
     // set listner to clear cart btn 
     const cartClearBtn = document.querySelector('.clear-cart-btn');
     cartClearBtn.addEventListener('click', clearCart);
+
+    // set listener to delivery date
+    const deliveryDate = document.querySelector('#delivery-date');
+    deliveryDate.addEventListener('change', updateCartAttirbutes.bind(this));
+}
+
+// function to update cart attribute
+function updateCartAttirbutes(e) {
+    // console.log(e.target.value)
+    let data = JSON.stringify({
+        attributes: { 
+            deliveryDate: e.target.value
+        }
+    })
+    let requestURL = window.shopUrl + window.routes.cart_update_url + '.js';
+    
+    fetch(requestURL, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: data
+    })
+    .then(response => {
+        let data = response.text();
+        // console.log(response);
+        
+        if (!response.ok) {
+            throw new Error("HTTP error" + response.status);
+        }
+        // alert('updated attribute');
+        console.log('updated the attribute ');
+
+        // update UI 
+        // updateUI();
+    })
+    .catch(error => {
+        console.log(error);
+    })
 }
 
 // function to arrange data and call updateQTY for qty buttons 
@@ -133,26 +173,47 @@ function updateUI() {
      .then(respnse => respnse.json()) 
      .then(data => {
         
-        let cartHTML = data['custom-cart'];
-       
+        // console.log(data['custom-cart'])
+        // return
 
+        let cartHTML = data['custom-cart'];
         let parser = new DOMParser();
         cartHTML = parser.parseFromString(cartHTML, 'text/html');
 
+        try {
+            let updatedCartTableBody = cartHTML.querySelector('#custom-cart-body');
+            cartTable.removeChild(cartTable.querySelector('#custom-cart-body'));
+            cartTable.appendChild(updatedCartTableBody);
+        } catch (error) {
+            cartTable.appendChild(updatedCartTableBody);
+        }
         // update cart data
-        let updatedCartTableBody = cartHTML.querySelector('#custom-cart-body');
-        cartTable.removeChild(cartTable.querySelector('#custom-cart-body'));
-        cartTable.appendChild(updatedCartTableBody);
+        
 
         // update total
-        let updatedTotal = cartHTML.querySelector('.cart-total .price')
-        cartTotal.removeChild(cartTotal.querySelector('.price'))
-        cartTotal.appendChild(updatedTotal);
-
+        
+        
+        try {
+            let updatedTotal = cartHTML.querySelector('.cart-total .price')
+            cartTotal.removeChild(cartTotal.querySelector('.price'))
+            cartTotal.appendChild(updatedTotal);
+        } catch (error) {
+            cartTotal.appendChild(updatedTotal);
+        }
+        // cartTotal.querySelector('.price')
+        // return
+        
+        try {
+            let updatedfreeShippingBar = cartHTML.querySelector('.free-shipping-bar .free-shipping-details');
+            freeShippingBar.removeChild(freeShippingBar.querySelector('.free-shipping-details'))
+            freeShippingBar.appendChild(updatedfreeShippingBar);
+        } catch (error) {
+            freeShippingBar.appendChild(updatedfreeShippingBar);
+        }
         // update free shipping bar
-        let updatedfreeShippingBar = cartHTML.querySelector('.free-shipping-bar .free-shipping-details');
-        freeShippingBar.removeChild(freeShippingBar.querySelector('.free-shipping-details'))
-        freeShippingBar.appendChild(updatedfreeShippingBar);
+        // let updatedfreeShippingBar = cartHTML.querySelector('.free-shipping-bar .free-shipping-details');
+        // freeShippingBar.removeChild(freeShippingBar.querySelector('.free-shipping-details'))
+        // freeShippingBar.appendChild(updatedfreeShippingBar);
 
         // Set listner to quantity BUTTONS
         setListeners();

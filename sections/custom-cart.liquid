@@ -150,14 +150,24 @@
 
         </form>
 
-
-        <div class="cart-subtotal cart-total" style="text-align: right;">
-            <h2 class="mx-5 price"> {{ cart.total_price | money }} </h2>
+        <div class="cart-footer d-flex justify-content-between">
+            
+            <div class="cart__footer my-4">
+                <div class="cart-attribute my-4">
+                    <label>Please let us know the delivery data</label>
+                    <input type="date" name="attributes[Delivery data]" value="{{ cart.attributes['Delivery data'] }}" id="delivery-date">
+                </div>
+                <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart"> Checkout </button>
+            </div>
+    
+            <div class="cart-subtotal cart-total my-4" style="text-align: right;">
+            
+                <h2 class="mx-5 price"> {{ cart.total_price | money }} </h2>
+            </div>
+    
         </div>
-
-        <div class="cart__footer my-4">
-            <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart"> Checkout </button>
-        </div>
+        
+        
         
         
 
