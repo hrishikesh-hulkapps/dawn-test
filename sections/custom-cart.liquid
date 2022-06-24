@@ -1,12 +1,12 @@
 
 
 <div class="container my-5 py-5" id="section-cart-block">
-    {% if block.settings.free_shipping %}
+    {% if section.settings.free_shipping %}
         {% if cart.item_count > 0 %} 
             <div class="row">
                 {%- liquid 
                     assign cartTotal = cart.total_price | divided_by: 100 
-                    assign freeShippingTotal = block.settings.free_shipping_amount
+                    assign freeShippingTotal = section.settings.free_shipping_amount
                     assign addMore = 0
                     assign freeShippingBar = 0
                 -%}
