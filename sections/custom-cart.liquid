@@ -200,18 +200,37 @@
 
 {% schema %}
 {
-  "name": "t:sections.custom-cart.name",
+  "name": "Custom cart",
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "show_vendor",
-      "default": false,
-      "label": "t:sections.custom-cart.settings.show_vendor.label"
-    },
     {
       "type": "checkbox",
       "id": "show_back_btn",
       "label": "Show Back to Shop Button?"
+    },
+    {
+        "type": "checkbox",
+        "id": "free_shipping",
+        "label": "Give free shipping if the cart amount is greater than specific amount?"
+    },
+    {
+        "type": "number",
+        "id": "free_shipping_amount",
+        "label": "Free shipping above amount"
+    },
+    {
+        "type": "checkbox",
+        "id": "gift_product",
+        "label": "Gift a product if the cart amount is greater than specific amount?"
+    },
+    {
+        "type": "number",
+        "id": "gift_product_amount",
+        "label": "Enter the cart amount for gift product"
+    },
+    {
+        "type": "product",
+        "id": "gift_product_name",
+        "label": "Select free product if the cart amount exceeds the above amount"
     }
   ]
 }
