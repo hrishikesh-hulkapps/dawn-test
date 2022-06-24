@@ -1,45 +1,8 @@
 
 
 <div class="container my-5 py-5" id="section-cart-block">
-   
-    {% if section.settings.free_shipping_amount %}
-        {% if cart.item_count > 0 %} 
-            <div class="row">
-                {%- liquid 
-                    assign cartTotal = cart.total_price | divided_by: 100 
-                    assign freeShippingTotal = section.settings.free_shipping_amount
-                    assign addMore = 0
-                    assign freeShippingBar = 0
-                -%}
-                {% if freeShippingTotal > 0 %}
-            
-                    <div class="free-shipping-bar mx-auto my-5">
-                        <div class="free-shipping-details">       
-                            <p class="free-shipping-head">Avail free shipping if cart total is more than ${{section.settings.free_shipping_amount}} </p>
 
-                            {% assign freeShippingBar = cartTotal | times: 100 | divided_by: freeShippingTotal %}
-
-                            {% if cartTotal >= freeShippingTotal %}
-                                <h3 class="free-eligible my-4"> You are eligible for free shipping </h3>
-                            {% else %}
-                                {% assign addMore = freeShippingTotal | minus: cartTotal %}
-                                <p class="free-not-eligible mt-3"> YOU ARE <span class="free-amount">${{ addMore }}</span> AWAY FROM FREE SHIPPING!</p>
-                            {% endif %}
-
-                            <div class="progress">
-                                <div class="progress-bar d-block" 
-                                    style="width:{{ freeShippingBar }}%;" 
-                                    role="progressbar" 
-                                >
-                                </div>    
-                            </div>
-                        </div>
-                    </div>
-                
-                {% endif %}
-            </div>
-        {% endif %}
-    {% endif %}
+    {% render 'free-shipping-bar' %}
 
     {% if cart.item_count > 0 %} 
     <div class="row">
@@ -166,10 +129,6 @@
             </div>
     
         </div>
-        
-        
-        
-        
 
         <script type="application/json" data-cartScriptJSON>
             {{ cart | json }}
@@ -191,7 +150,7 @@
 
 {% schema %}
 {
-  "name": "Custom cart",
+  "name": "Custom Cart",
   "settings": [
     {
       "type": "checkbox",

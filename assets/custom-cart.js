@@ -161,6 +161,7 @@ function clearCart() {
 // function to update the UI/HTML
 function updateUI() {
 
+    const cart = document.querySelector('#section-cart-block');
     const cartTable = document.querySelector('.cart-details');
     const cartTotal = document.querySelector('.cart-total');
     const freeShippingBar = document.querySelector('.free-shipping-bar');
@@ -180,38 +181,27 @@ function updateUI() {
         let parser = new DOMParser();
         cartHTML = parser.parseFromString(cartHTML, 'text/html');
 
-        try {
-            let updatedCartTableBody = cartHTML.querySelector('#custom-cart-body');
-            cartTable.removeChild(cartTable.querySelector('#custom-cart-body'));
-            cartTable.appendChild(updatedCartTableBody);
-        } catch (error) {
-            cartTable.appendChild(updatedCartTableBody);
-        }
-        // update cart data
-        
+        // update all 
+        let updatedCart = cartHTML.querySelector('#section-cart-block .cart-container');
+        console.log(cartHTML);
+        return
+        cart.removeChild(cart.querySelector('.cart-container'));
+        cart.appendChild(updatedCart);
 
-        // update total
-        
-        
-        try {
-            let updatedTotal = cartHTML.querySelector('.cart-total .price')
-            cartTotal.removeChild(cartTotal.querySelector('.price'))
-            cartTotal.appendChild(updatedTotal);
-        } catch (error) {
-            cartTotal.appendChild(updatedTotal);
-        }
-        // cartTotal.querySelector('.price')
-        // return
-        
-        try {
-            let updatedfreeShippingBar = cartHTML.querySelector('.free-shipping-bar .free-shipping-details');
-            freeShippingBar.removeChild(freeShippingBar.querySelector('.free-shipping-details'))
-            freeShippingBar.appendChild(updatedfreeShippingBar);
-        } catch (error) {
-            freeShippingBar.appendChild(updatedfreeShippingBar);
-        }
-        // update free shipping bar
+        // // update cart data
+        // let updatedCartTableBody = cartHTML.querySelector('#custom-cart-body');
+        // cartTable.removeChild(cartTable.querySelector('#custom-cart-body'));
+        // cartTable.appendChild(updatedCartTableBody);
+
+        // // update total        
+        // let updatedTotal = cartHTML.querySelector('.cart-total .price')
+        // cartTotal.removeChild(cartTotal.querySelector('.price'))
+        // cartTotal.appendChild(updatedTotal);
+    
+        // // update free shipping bar
         // let updatedfreeShippingBar = cartHTML.querySelector('.free-shipping-bar .free-shipping-details');
+        // // console.log(cartHTML.querySelector('.free-shipping-bar .free-shipping-details'))
+        // // return
         // freeShippingBar.removeChild(freeShippingBar.querySelector('.free-shipping-details'))
         // freeShippingBar.appendChild(updatedfreeShippingBar);
 

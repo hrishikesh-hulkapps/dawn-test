@@ -1,6 +1,6 @@
 {
   "sections": {
-    "cart-items": {
+    "custom-cart": {
       "type": "custom-cart",
       "settings": {
       }
@@ -27,7 +27,7 @@
     }
   },
   "order": [
-    "cart-items",
+    "custom-cart",
     "featured-collection"
   ]
 }
