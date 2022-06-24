@@ -1,7 +1,8 @@
 
 
 <div class="container my-5 py-5" id="section-cart-block">
-    {% if section.settings.free_shipping %}
+    {{section.settings.free_shipping_amount}}
+    {% if section.settings.free_shipping_amount %}
         {% if cart.item_count > 0 %} 
             <div class="row">
                 {%- liquid 
@@ -14,7 +15,7 @@
             
                     <div class="free-shipping-bar mx-auto my-5">
                         <div class="free-shipping-details">       
-                            <p class="free-shipping-head">Avail free shipping if cart total is more than $200 </p>
+                            <p class="free-shipping-head">Avail free shipping if cart total is more than ${{section.settings.free_shipping_amount}} </p>
 
                             {% assign freeShippingBar = cartTotal | times: 100 | divided_by: freeShippingTotal %}
 
