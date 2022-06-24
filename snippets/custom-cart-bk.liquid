@@ -1,0 +1,323 @@
+<div class="container my-5 py-5" id="section-cart-block">
+    <!-- From: cst template: {{ shop.url }} -->
+    <div class="row">
+
+        <div class="heading d-flex align-items-center justify-content-between my-4">
+            <h2> {{ page_title }} </h2>
+            <button class="clear-cart-btn btn btn-dark">Clear cart</button>
+            <a href="{{ routes.all_products_collection_url }}" class="underlined-link">Continue Shopping</a>
+        </div>
+
+        <form action="/cart" method="POST" class="cart-form" id="cart">
+
+            <table class="table cart-details">
+                <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody class="cart-body">
+                    
+                    {%- for item in cart.items -%}
+                 
+                    <tr>
+                        <td>
+                            <div class="item-data d-flex flex-row my-3">
+                                <div class="item-image mx-4">
+                                    {% if item.image %}
+                                    {{ item.image | image_url: width: 100 | image_tag: srcset: nil }}
+                                    {% endif %}
+                                </div>
+                                <div class="item-details">
+                                    <a href="{{item.url}}">
+                                        <p class="item-name"> {{item.product.title}} </p>
+                                    </a>
+                                    <p class="item-price"> {{item.original_price | money }}</p>
+                                    <dl>
+                                        {% if item.product.has_only_default_variant == false or item.properties.size !=
+                                        0 %}
+                                        <div class="item-variant">
+
+                                            {%- if item.product.has_only_default_variant == false -%}
+                                            {%- for option in item.options_with_values -%}
+                                            <div class="product-option">
+                                                <dt>{{ option.name }}: </dt>
+                                                <dd>{{ option.value }}</dd>
+                                            </div>
+                                            {%- endfor -%}
+                                            {%- endif -%}
+
+                                            {%- for property in item.properties -%}
+                                            {%- assign property_first_char = property.first | slice: 0 -%}
+                                            {%- if property.last != blank and property_first_char != '_' -%}
+                                            <div class="product-option">
+                                                <dt> {{ property.first }}: </dt>
+                                                <dd> {{ property.last }} </dd>
+                                            </div>
+                                            {%- endif -%}
+                                            {%- endfor -%}
+
+                                        </div>
+                                        {% endif %}
+                                    </dl>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="quantity-wrapper d-flex flex-row align-items-center">
+                                <div class="item-quantity">
+                                    <button class="quantity-button " name="minus" type="button"
+                                        id="minus-btn">-</button>
+                                    <input type="number" name="updates[]" min="0" id="quantity-input"
+                                        value="{{item.quantity}}" data-variantid="{{item.id}}" data-line="{{ forloop.index }}">
+                                    <button class="quantity-button " name="plus" type="button" id="plus-btn">+</button>
+                                </div>
+                                <div class="item-remove mx-4">
+                                    <a href="{{ item.url_to_remove }}" class="delete-btn">
+                                        <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </td>
+
+                        <td>
+                            <div class="item-total-price">
+                                <p> {{ item.final_line_price | money }} </p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    {% endfor %}
+
+                </tbody>
+            </table>
+
+        </form>
+
+
+        <div class="cart-subtotal" style="text-align: right;">
+            <h2 class="mx-5"> {{ cart.total_price | money }} </h2>
+            <h2>  </h2>
+            
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        // Set listner to qty buttons 
+        const qtyButton = document.querySelectorAll('.quantity-button');
+        qtyButton.forEach(btn => {
+            btn.addEventListener('click', getData.bind(this));
+        })
+
+        // getData function to arrange data and call updateQTY
+        function getData(e) {
+
+            let currentQty = parseInt(e.target.parentNode.querySelector('#quantity-input').value);
+            let currentVariantid = e.target.parentNode.querySelector('#quantity-input').dataset.line;
+            let action = e.target.name;
+           
+            if(action == 'plus') {
+                currentQty += 1;
+                console.log(currentQty)
+                updateCart(currentQty, currentVariantid)
+            } else if(action == 'minus') {
+                console.log(currentQty)
+
+                if(currentQty != 0) {
+                    currentQty -= 1;
+                    updateCart(currentQty, currentVariantid)
+                }
+            }
+            // console.log(e.target.name);
+        }
+
+
+        // Set listner to quantity
+        const quantityInput = document.querySelectorAll('#quantity-input');
+        quantityInput.forEach(input => {
+            input.addEventListener('click', getDataInput.bind(this));
+        })
+
+        // get data from input and call update
+        function getDataInput(e) {
+            let currentVariantid = e.target.dataset.line
+            let currentQuantity = e.target.value
+            if(currentQty != 0) {
+                updateCart(currentQuantity, currentVariantid)
+            }
+        }
+
+        function updateCart(quantity, variantId) {
+            // create data to pass 
+            let data = {
+                'line': variantId,
+                'quantity': quantity
+            }
+            // make post request
+            let requestURL = "{{ routes.cart_change_url }}" + '.js';
+            fetch(requestURL, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                let data = response.text();
+                if (!response.ok) {
+                    throw new Error("HTTP error" + response.status);
+                }
+                // console.log(data);
+                console.log('updated the value ');
+
+                // update UI 
+                updateUI();
+            })
+            .catch(error => {
+                console.log(error);
+            })
+        }
+
+        const cartClearBtn = document.querySelector('.clear-cart-btn');
+        cartClearBtn.addEventListener('click', clearCart);
+        
+        // clear cart js 
+        function clearCart() {
+
+            let reqURL = "{{ routes.cart_clear_url }}" + '.js';
+            fetch(reqURL, {
+                method: 'POST', headers: { "Content-Type": "application/json", "Accept": "application/json" }
+            })
+            .then(response => {
+                // let data = response.text();
+                // if (!response.ok) {
+                //     throw new Error("HTTP error" + response.status);
+                // }
+                // console.log(data);
+
+                // function to update the UI/HTML
+               
+                console.log('CART IS CLEAR  (update HTML) ');
+                updateUI();
+
+            })
+            .catch(error => {
+                console.log(error);
+            })
+        }
+
+        // function to update the UI/HTML
+        function updateUI() {
+
+            const cartTableBody = document.querySelector('.cart-body');
+            
+            let reqURL = "{{ shop.url }}" + '/cart.js';
+            fetch(reqURL, {
+                method: 'GET', headers: { "Content-Type": "application/json", "Accept": "application/json" }
+            })
+            .then(res => res.json()) 
+            .then(data => {
+
+                // let cartItems = JSON.parse(data);
+                let tableRow = '<tr>';
+
+                for(let i=0; i < data.items.length ; i++ ) {
+                    
+                    tableRow += `<td> </td>
+                                <td> </td>
+                                <td>
+                                    <div class="item-total-price"> <p> {{ item.final_line_price | money }} </p> </div>
+                                </td>`;
+                    
+
+                    // console.log(data.items[i].id);
+                }
+                tableRow += '</tr>'
+
+                var temp = document.createElement('div');
+                temp.innerHTML = tableRow;
+                var htmlObject = temp.firstChild;
+
+                console.log(htmlObject)
+                cartTableBody.append(htmlObject);
+                // code to update the UI
+
+                // console.log(data)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+        }
+
+    });
+
+</script>
+
+
+<style>
+    .table {
+        font-family: 'Spartan SemiBold';
+    }
+
+    .cart-details thead tr th {
+        font-size: 16px;
+    }
+
+    .delete-btn {
+        color: #000;
+    }
+
+    .item-price,
+    .item-name {
+        font-size: 13px;
+    }
+
+    .item-total-price {
+        font-size: 14px;
+    }
+
+    .quantity-button {
+        padding: 5px;
+        font-size: 20px;
+        background: none;
+        border: none;
+        width: 50px;
+    }
+
+    .item-quantity {
+        border: 1px solid #000;
+    }
+
+    #quantity-input {
+        border: none;
+        width: 50px;
+        padding: 10px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .item-remove {
+        text-align: center;
+    }
+
+    .clear-cart-btn.btn.btn-dark {
+        background: none;
+        color: black;
+    }
+
+    .clear-cart-btn.btn.btn-dark:hover {
+        background: #000;
+        color: #fff;
+    }
+</style>

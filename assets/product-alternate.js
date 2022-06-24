@@ -1,5 +1,28 @@
+// Get the modal
+var modal = document.getElementById('myModal');
+     
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    modalImg.alt = this.alt;
+}
+ 
+ 
+// When the user clicks on <span> (x), close the modal
+modal.onclick = function() {
+    img01.className += " out";
+    setTimeout(function() {
+       modal.style.display = "none";
+       img01.className = "modal-content";
+     }, 400);
 
-// const form = document.querySelector('.options-form');
+}
+
+// Product page single js
+const form = document.querySelector('.options-form');
 const optionsSelect = document.querySelectorAll('.select-option');
 const variantJSON = form.querySelector('[data-variantJSON]');
 const addToCart = document.querySelector('#add-to-cart-btn');
@@ -13,8 +36,6 @@ addToCart.addEventListener('click', submitForm.bind(this));
 optionsSelect.forEach(option => {
     option.addEventListener('change', variantChange.bind(this));
 })    
-
-
 
 // get options on event change
 function variantChange(e) {
@@ -41,8 +62,8 @@ function variantChange(e) {
     });
 
     // update URL        
-    // const variantURL = '?variant=' + currentVariant.id;
-    // history.replaceState(null, null, variantURL);
+    const variantURL = '?variant=' + currentVariant.id;
+    history.replaceState(null, null, variantURL);
 
     // update select hidden 
     variantSelect.value = currentVariant.id;
@@ -61,26 +82,26 @@ function variantChange(e) {
 }
 
 // Submit form (for free product, without array) 
-// Pending
 function submitFormFree(e) {
     e.preventDefault();
-    
+    console.log('via id[]')
     // let data = new FormData(form);
-    // // console.log(JSON.stringify(data));
+    // console.log(data);
+    // console.log(JSON.stringify(data));
+
+    // return;
 
     // let formDataObject = Object.fromEntries(data.entries());
     // let formDataJsonString = JSON.stringify(formDataObject);
     // console.log(formDataJsonString);
     
     form.submit();
-
 }
 
 function submitForm(e) {
 
     e.preventDefault();
-    // console.log(e);
-    console.log('via submit form');
+    console.log(e);
     
     let items ;
     const variantSelect = document.querySelector('#variants');
@@ -88,7 +109,7 @@ function submitForm(e) {
 
     // get line item properties
     const lineItemName = document.querySelector('#your-name') || '';
-    const lineItemBirthdate = document.querySelector('#your-birthdate') || '';
+    const lineItemBirthdate = document.querySelector('#your-birthdate') || '    ';
 
     // const form = document.querySelector('#add-to-cart');
     // const formData = new FormData(form);
@@ -113,18 +134,31 @@ function submitForm(e) {
     // })
     // form.submit();
 
+    // check if it has free products
+    const freeCheck = document.getElementById('free-products') || '';
+    console.log(freeCheck)
+    let property = '';
+    let uniqueId = '';
+    if(freeCheck.value == 1) {
+        uniqueId = Math.floor((Math.random() * 1000) + 1);
+         property = {
+            uniqueId: uniqueId,
+            productType: 'main-product'
+        }
+    }
+
     // create items array
     items = [{
         id : variantSelect.value,
         quantity : quantity.value,
-        properties: ""
+        properties: property
     }]
 
     // add line items to array
     if( lineItemBirthdate.value || lineItemName.value ) {
         let properties =  {
-            "_Name": lineItemName.value,
-            "_Birthdate": lineItemBirthdate.value
+            "Name": lineItemName.value,
+            "Birthdate": lineItemBirthdate.value
         }
         items[0].properties = properties
         // items.property = properties
@@ -137,7 +171,11 @@ function submitForm(e) {
             // console.log(addon.value);
             let data = {
                 id: addon.value,
-                quantity: 1
+                quantity: 1,
+                properties: {
+                    uniqueId: uniqueId,
+                    productType: 'sub-product'
+                }
             }
             items.push(data);
         }
@@ -150,7 +188,9 @@ function submitForm(e) {
 
 
     // make post request
-    let requestURL = "{{ routes.cart_add_url }}" + '.js';
+    // let requestURL = "{{ routes.cart_add_url }}" + '.js';
+    let requestURL = window.shopUrl + window.routes.cart_add_url + '.js';
+
     fetch(requestURL, {
         method: 'POST',
         headers: {
@@ -168,6 +208,8 @@ function submitForm(e) {
         if (!response.ok) {
             throw new Error("HTTP error" + response.status);
         }
+        // alert('Added to cart');
+        openNav();
         console.log('added to cart');
     })
     .catch(error => {
@@ -176,5 +218,30 @@ function submitForm(e) {
     
 }
 
+// for color swatch liquid
+document.addEventListener("DOMContentLoaded", function () {
+               
+    // set event listners for color swatch
+    const cs = document.querySelectorAll('.swatch-image');
+    cs.forEach(li => {
+        li.addEventListener('click', updateVariant.bind(this));
+    })
 
+    // update variant for color swatch
+    function updateVariant(e) {
 
+        // get selected value 
+        // const selected = e.path[1].firstElementChild.innerHTML.trim();
+        const selected = e.path[1].dataset.color;
+        console.log(selected);
+        // return
+
+        // update default select 
+        const colorDrop = document.querySelector('.color-drop');
+
+        colorDrop.value = selected;
+        // call variant change
+        variantChange();
+    }
+
+});

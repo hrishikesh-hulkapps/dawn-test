@@ -12,7 +12,6 @@ window.onload = function() {
 
 
     function getProductData(handle) {
-        // let requestURl = `/products/${handle}.json`;
         let requestURl = `/products/${handle}?view=alternate-test`;
 
         fetch(requestURl)
@@ -30,27 +29,38 @@ window.onload = function() {
 
                 // load js
                 var script = document.createElement("script");
-                script.src = "https://cdn.shopify.com/s/files/1/0639/8106/0337/t/4/assets/quickview.js?v=175603321080792910491655366308"; 
+                script.src = "https://cdn.shopify.com/s/files/1/0639/8106/0337/t/4/assets/for-quickview.js?v=137001516344559235161655367625"; 
                 document.getElementsByTagName("head")[0].appendChild(script);
 
+                //add listner to swatch img
+                const cs = document.querySelectorAll('.swatch-image');
+                cs.forEach(li => {
+                    li.addEventListener('click', updateVariant.bind(this));
+                    console.log('added eve list to .swatchimg')
+                })
+              
             })
             .catch(error => console.error('Error:', error))
-            .finally(() => console.log(101))
-
-        
-
-        // get HTML elements
-        // const pTitle = document.querySelector('.modal-product-title');
-        // const pDescription = document.querySelector('.modal-product-description');
-        // const pImage= document.querySelector('.modal-featured-image');
-
-        // pTitle.innerHTML = data.product.title;
-        // pDescription.innerHTML = data.product.body_html;
-        // pImage.src = data.product.image.src;
-
-        // modal.classList.add('show-modal');
+            // .finally(() => console.log(101))
     }
-    
+
+    // for color swatch liquid -- update variant for color swatch
+    function updateVariant(e) {
+
+        // get selected value 
+        // const selected = e.path[1].firstElementChild.innerHTML.trim();
+        const selected = e.path[1].dataset.color;
+        console.log(selected);
+        // return
+
+        // update default select 
+        const colorDrop = document.querySelector('.color-drop');
+
+        colorDrop.value = selected;
+        // call variant change
+        variantChange();
+    }
+        
     
     // function toggleModal(e) {
     //     // console.log(e.dataset.handle);
@@ -65,7 +75,6 @@ window.onload = function() {
         // modal.classList.add('show-modal');
 
         let handle = e.path[0].dataset.handle; 
-        
         console.log(handle);
 
         // console.log(e.path[0].dataset.handle);

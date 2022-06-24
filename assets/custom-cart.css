@@ -1,0 +1,91 @@
+.table {
+    font-family: 'Spartan SemiBold';
+}
+
+.cart-details thead tr th {
+    font-size: 16px;
+}
+
+.delete-cart-item {
+    color: #000;
+    background: none;
+    border: none;
+}
+
+.item-price,
+.item-name {
+    font-size: 13px;
+}
+
+.item-total-price {
+    font-size: 14px;
+}
+
+.quantity-button {
+    padding: 5px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    width: 50px;
+}
+
+.item-quantity {
+    border: 1px solid #000;
+}
+
+.quantity-input {
+    border: none;
+    width: 50px;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.item-remove {
+    text-align: center;
+}
+
+.clear-cart-btn.btn.btn-dark {
+    background: none;
+    color: black;
+}
+
+.clear-cart-btn.btn.btn-dark:hover {
+    background: #000;
+    color: #fff;
+}
+
+.progress-bar {
+    background-color: #bb9185;
+}
+.free-eligible {
+    color: #ff703d;
+}
+
+.free-shipping-head {
+    text-align: center;
+    font-size: 24px;
+    font-family: Bebas Kai;
+}
+
+.free-eligible,
+.free-not-eligible {
+    font-family: 'Spartan SemiBold';
+    text-align: center;
+    font-size: 16px;
+}
+
+.page-title {
+    font-family: 'Spartan SemiBold';
+    letter-spacing: 0;
+}
+.free-items {
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.empty-text {
+    text-align: center;
+    font-family: 'Spartan SemiBold';
+    font-size: 20px;
+}
