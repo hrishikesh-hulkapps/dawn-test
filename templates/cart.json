@@ -3,12 +3,6 @@
     "cart-items": {
       "type": "custom-cart",
       "settings": {
-        "show_back_btn": false,
-        "free_shipping": true,
-        "free_shipping_amount": 300,
-        "gift_product": true,
-        "gift_product_amount": 400,
-        "gift_product_name": "complimentary"
       }
     },
     "featured-collection": {
@@ -16,22 +10,15 @@
       "settings": {
         "title": "Featured collection",
         "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
         "collection": "all",
         "products_to_show": 4,
         "columns_desktop": 4,
-        "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
         "color_scheme": "background-1",
         "image_ratio": "square",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "enable_quick_add": false,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 36,
