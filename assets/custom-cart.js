@@ -182,10 +182,10 @@ function updateUI() {
         cartHTML = parser.parseFromString(cartHTML, 'text/html');
 
         // update all 
-        let updatedCart = cartHTML.querySelector('#section-cart-block .cart-container');
-        console.log(cartHTML);
-        return
-        cart.removeChild(cart.querySelector('.cart-container'));
+        let updatedCart = cartHTML.querySelector('#section-cart-block .blocks-holder');
+        // console.log(cartHTML);
+        // return
+        cart.removeChild(cart.querySelector('.blocks-holder'));
         cart.appendChild(updatedCart);
 
         // // update cart data
