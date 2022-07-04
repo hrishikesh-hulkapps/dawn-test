@@ -155,6 +155,36 @@
         "image_5": "shopify:\/\/shop_images\/Instagram2.png",
         "image_6": "shopify:\/\/shop_images\/Instagram5.png"
       }
+    },
+    "16569301476fe5675c": {
+      "type": "two-column-block",
+      "blocks": {
+        "1656930147920f9dce-0": {
+          "type": "left_block",
+          "settings": {
+            "hero_image_left": "shopify:\/\/shop_images\/Group_460.png",
+            "large_heading": "The best beauty in the world",
+            "para_text": "Balm contour won Marie Claire's Pix Award!",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections"
+          }
+        },
+        "1656930147920f9dce-1": {
+          "type": "right_block",
+          "settings": {
+            "large_heading_right": "",
+            "para_text_right": "",
+            "button_text_right": "",
+            "button_link_right": ""
+          }
+        }
+      },
+      "block_order": [
+        "1656930147920f9dce-0",
+        "1656930147920f9dce-1"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -163,6 +193,7 @@
     "1656929702fc421f45",
     "1656928484d40c7480",
     "1656929100bd0cda9b",
-    "16569291615ea6e5eb"
+    "16569291615ea6e5eb",
+    "16569301476fe5675c"
   ]
 }
