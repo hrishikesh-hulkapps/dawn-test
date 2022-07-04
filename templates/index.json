@@ -1,5 +1,17 @@
 {
   "sections": {
+    "1656930371174e1b5f": {
+      "type": "spotlight-block",
+      "settings": {
+        "spotlight_image": "shopify:\/\/shop_images\/NUDE12.png",
+        "spotlight_image_mobile": "shopify:\/\/shop_images\/NUDE12_1.png",
+        "large_heading": "Colorfix",
+        "small_heading": "2-hour Cream",
+        "product_1": "acb-top-in-chipped-brick",
+        "product_2": "a-line-jacket-in-black",
+        "product_3": "alex-twill-pant-navy"
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -187,20 +199,45 @@
         "image_6": "shopify:\/\/shop_images\/Instagram5.png"
       }
     },
-    "1656930371174e1b5f": {
-      "type": "spotlight-block",
+    "165693052767492b1a": {
+      "type": "about",
+      "blocks": {
+        "1656930527147c5ff5-0": {
+          "type": "icon_block",
+          "settings": {
+            "icon_1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/makeup.svg?v=1652687262",
+            "description_1": "Formulated for creative, multi-functional use",
+            "description_mobile_1": "multi-functional",
+            "icon_2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/heart.svg?v=1652687307",
+            "description_2": "Made for beginners and pros alike",
+            "description_mobile_2": "for beginners and pros",
+            "icon_3": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/rabbit.svg?v=1652687392",
+            "description_3": "All of our makeup is cruelty-free",
+            "description_mobile_3": "cruelty-free"
+          }
+        },
+        "1656930527147c5ff5-1": {
+          "type": "about_block",
+          "settings": {
+            "title": "",
+            "description": "",
+            "button_text_1": "",
+            "button_link_1": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "1656930527147c5ff5-0",
+        "1656930527147c5ff5-1"
+      ],
       "settings": {
-        "spotlight_image": "shopify:\/\/shop_images\/NUDE12.png",
-        "spotlight_image_mobile": "shopify:\/\/shop_images\/NUDE12_1.png",
-        "large_heading": "Colorfix",
-        "small_heading": "2-hour Cream",
-        "product_1": "acb-top-in-chipped-brick",
-        "product_2": "a-line-jacket-in-black",
-        "product_3": "alex-twill-pant-navy"
       }
     }
   },
   "order": [
+    "1656930371174e1b5f",
     "featured_collection",
     "1650980038fc3629f5",
     "16569301476fe5675c",
@@ -208,6 +245,6 @@
     "1656928484d40c7480",
     "1656929100bd0cda9b",
     "16569291615ea6e5eb",
-    "1656930371174e1b5f"
+    "165693052767492b1a"
   ]
 }
