@@ -77,11 +77,42 @@
         "bg_color": "#EEE3E0",
         "swap_columns": false
       }
+    },
+    "1656928813dd6261f8": {
+      "type": "in-the-press",
+      "blocks": {
+        "165692881333729e46-0": {
+          "type": "single_slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/COSMOPOLITAN-TRANSPARENT-BACKGROUND.png"
+          }
+        },
+        "15677705-6c74-4fd8-b9cf-d2a6dfa05429": {
+          "type": "single_slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/MARIE-CLAIRE-TRANSPARENT-BACKGROUND.png"
+          }
+        },
+        "e3b2e43d-b4d1-474f-84b4-201e6f5a5016": {
+          "type": "single_slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Image_15.png"
+          }
+        }
+      },
+      "block_order": [
+        "165692881333729e46-0",
+        "15677705-6c74-4fd8-b9cf-d2a6dfa05429",
+        "e3b2e43d-b4d1-474f-84b4-201e6f5a5016"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "featured_collection",
     "1650980038fc3629f5",
-    "1656928484d40c7480"
+    "1656928484d40c7480",
+    "1656928813dd6261f8"
   ]
 }
