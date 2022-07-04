@@ -12,6 +12,37 @@
         "product_3": "alex-twill-pant-navy"
       }
     },
+    "16569301476fe5675c": {
+      "type": "two-column-block",
+      "blocks": {
+        "1656930147920f9dce-0": {
+          "type": "left_block",
+          "settings": {
+            "hero_image_left": "shopify:\/\/shop_images\/Group_460.png",
+            "large_heading": "The best beauty in the world",
+            "para_text": "Balm contour won Marie Claire's Pix Award!",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections"
+          }
+        },
+        "1656930147920f9dce-1": {
+          "type": "right_block",
+          "settings": {
+            "hero_image_right": "shopify:\/\/shop_images\/AdobeStock_251061394_Preview.png",
+            "large_heading_right": "Colorfix 24-Hour Cream",
+            "para_text_right": "High pigment, multipurpose liquid color for eyes, lips and cheeks!",
+            "button_text_right": "Shop Now",
+            "button_link_right": "shopify:\/\/collections\/set-seal"
+          }
+        }
+      },
+      "block_order": [
+        "1656930147920f9dce-0",
+        "1656930147920f9dce-1"
+      ],
+      "settings": {
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -42,37 +73,6 @@
     "1650980038fc3629f5": {
       "type": "image-block",
       "disabled": true,
-      "settings": {
-      }
-    },
-    "16569301476fe5675c": {
-      "type": "two-column-block",
-      "blocks": {
-        "1656930147920f9dce-0": {
-          "type": "left_block",
-          "settings": {
-            "hero_image_left": "shopify:\/\/shop_images\/Group_460.png",
-            "large_heading": "The best beauty in the world",
-            "para_text": "Balm contour won Marie Claire's Pix Award!",
-            "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections"
-          }
-        },
-        "1656930147920f9dce-1": {
-          "type": "right_block",
-          "settings": {
-            "hero_image_right": "shopify:\/\/shop_images\/AdobeStock_251061394_Preview.png",
-            "large_heading_right": "Colorfix 24-Hour Cream",
-            "para_text_right": "High pigment, multipurpose liquid color for eyes, lips and cheeks!",
-            "button_text_right": "Shop Now",
-            "button_link_right": "shopify:\/\/collections\/set-seal"
-          }
-        }
-      },
-      "block_order": [
-        "1656930147920f9dce-0",
-        "1656930147920f9dce-1"
-      ],
       "settings": {
       }
     },
@@ -249,18 +249,49 @@
         "image_5": "shopify:\/\/shop_images\/Instagram2.png",
         "image_6": "shopify:\/\/shop_images\/Instagram5.png"
       }
+    },
+    "1656930930091fa69c": {
+      "type": "two-column-block",
+      "blocks": {
+        "1656930930a1a06546-0": {
+          "type": "left_block",
+          "settings": {
+            "hero_image_left": "shopify:\/\/shop_images\/AdobeStock_251061394_Preview_081f38e1-5c89-4472-b6cc-1e313c69d245.png",
+            "large_heading": "Find your shade",
+            "para_text": "Find your foundation & powder shade that's just for you!",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/accessories"
+          }
+        },
+        "1656930930a1a06546-1": {
+          "type": "right_block",
+          "settings": {
+            "large_heading_right": "",
+            "para_text_right": "",
+            "button_text_right": "",
+            "button_link_right": ""
+          }
+        }
+      },
+      "block_order": [
+        "1656930930a1a06546-0",
+        "1656930930a1a06546-1"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "1656930371174e1b5f",
+    "16569301476fe5675c",
     "featured_collection",
     "1650980038fc3629f5",
-    "16569301476fe5675c",
     "1656929702fc421f45",
     "1656928484d40c7480",
     "165693052767492b1a",
     "165693079404b700ac",
     "1656929100bd0cda9b",
-    "16569291615ea6e5eb"
+    "16569291615ea6e5eb",
+    "1656930930091fa69c"
   ]
 }
