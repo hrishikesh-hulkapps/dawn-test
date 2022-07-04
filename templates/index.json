@@ -45,39 +45,46 @@
         "swap_columns": false
       }
     },
-    "1656928813dd6261f8": {
+    "1656929100bd0cda9b": {
       "type": "in-the-press",
       "blocks": {
-        "165692881333729e46-0": {
+        "16569291004a96e009-0": {
+          "type": "single_slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/FORBES-TRANSPARENT-BACKGROUND.png"
+          }
+        },
+        "abb0cf87-11a5-4fe5-9e98-fd1c38980df3": {
           "type": "single_slide",
           "settings": {
             "logo_image": "shopify:\/\/shop_images\/COSMOPOLITAN-TRANSPARENT-BACKGROUND.png"
           }
         },
-        "15677705-6c74-4fd8-b9cf-d2a6dfa05429": {
+        "f4dd7457-9f80-467e-9901-1bd3a12127e8": {
           "type": "single_slide",
           "settings": {
             "logo_image": "shopify:\/\/shop_images\/MARIE-CLAIRE-TRANSPARENT-BACKGROUND.png"
           }
         },
-        "e3b2e43d-b4d1-474f-84b4-201e6f5a5016": {
+        "1c9e4aa0-b282-4424-a1f0-f35d00b66556": {
+          "type": "single_slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/VOGUE-TRANSPARENT-BACKGROUND.png"
+          }
+        },
+        "4cbced82-66be-4c4f-a446-059c6f34d306": {
           "type": "single_slide",
           "settings": {
             "logo_image": "shopify:\/\/shop_images\/Image_15.png"
           }
-        },
-        "afecee06-c904-4237-bc8f-94b15f1c3440": {
-          "type": "single_slide",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/FORBES-TRANSPARENT-BACKGROUND.png"
-          }
         }
       },
       "block_order": [
-        "165692881333729e46-0",
-        "15677705-6c74-4fd8-b9cf-d2a6dfa05429",
-        "e3b2e43d-b4d1-474f-84b4-201e6f5a5016",
-        "afecee06-c904-4237-bc8f-94b15f1c3440"
+        "16569291004a96e009-0",
+        "abb0cf87-11a5-4fe5-9e98-fd1c38980df3",
+        "f4dd7457-9f80-467e-9901-1bd3a12127e8",
+        "1c9e4aa0-b282-4424-a1f0-f35d00b66556",
+        "4cbced82-66be-4c4f-a446-059c6f34d306"
       ],
       "settings": {
       }
@@ -87,6 +94,6 @@
     "featured_collection",
     "1650980038fc3629f5",
     "1656928484d40c7480",
-    "1656928813dd6261f8"
+    "1656929100bd0cda9b"
   ]
 }
