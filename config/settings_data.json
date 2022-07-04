@@ -244,10 +244,25 @@
               "tk_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/Icon_simple-tiktok.svg?v=1651727312",
               "show_tk_icon": false
             }
+          },
+          "2bbde052-86af-4d4b-b29f-30d4524ebf45": {
+            "type": "footer_top",
+            "settings": {
+              "footer_logo": "shopify:\/\/shop_images\/Footer_logo.png",
+              "footer_menu_1_heading": "Shop",
+              "footer_menu_1": "header",
+              "footer_menu_2_heading": "Help",
+              "footer_menu_2": "discover",
+              "footer_menu_3_heading": "More",
+              "footer_menu_3": "main-menu",
+              "footer_contact_us": "<p>customerservice@danessamyricksbeauty.com<br\/><br\/>Hours Of Operation <br\/>Monday-Friday 10AM - 6PM EST<\/p>",
+              "footer_EU_dropdwon": true
+            }
           }
         },
         "block_order": [
-          "0426ba6f-40cc-483e-9028-9b878baf79d9"
+          "0426ba6f-40cc-483e-9028-9b878baf79d9",
+          "2bbde052-86af-4d4b-b29f-30d4524ebf45"
         ],
         "settings": {
         }
