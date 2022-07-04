@@ -36,13 +36,68 @@
     "1656928484d40c7480": {
       "type": "hero-text",
       "settings": {
-        "small_heading": "",
-        "large_heading": "",
-        "para_text": "",
-        "button_text": "",
-        "button_link": "",
+        "hero_image": "shopify:\/\/shop_images\/QQutdE9Q_1.png",
+        "small_heading": "A CROWD FAVORITE",
+        "large_heading": "Dewy Cheek & Lip Palette",
+        "para_text": "A skin loving, ultra-luxe cheek and lip cream palette filled with 4 multi-use shades ideal for all skin tones. Available in Dew It Flirty & Dew It Undercover.",
+        "button_text": "SHOP NOW",
+        "button_link": "shopify:\/\/collections",
         "bg_color": "#eee3e0",
         "swap_columns": false
+      }
+    },
+    "1656929702fc421f45": {
+      "type": "shop-by-collection",
+      "blocks": {
+        "1656929702beb3d41a-0": {
+          "type": "single_slide",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/Dew_Wet_Balm_Lifestyle_Image_2.png",
+            "button_text": "Complexion",
+            "button_link": "shopify:\/\/collections\/accessories"
+          }
+        },
+        "a5e401fd-2ca9-4fcc-9511-86805b5243a0": {
+          "type": "single_slide",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/Beauty_Oil_Lifestyle_3.png",
+            "button_text": "Glow",
+            "button_link": "shopify:\/\/collections\/clothing"
+          }
+        },
+        "20f910be-50f7-4c44-b243-137c444a57d5": {
+          "type": "single_slide",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/Model_Image_Twin_Flames-2.png",
+            "button_text": "Color",
+            "button_link": "shopify:\/\/collections\/color"
+          }
+        },
+        "00b053bf-f1a1-4bc7-95a8-d2b49d1600ac": {
+          "type": "single_slide",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/Model_Image_Twin_Flames.png",
+            "button_text": "Set & Seal",
+            "button_link": "shopify:\/\/collections\/complexion"
+          }
+        },
+        "8e40f059-7633-41fd-ab08-69374dc22c33": {
+          "type": "single_slide",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/Beauty_Oil_Lifestyle_3.png",
+            "button_text": "Beauty",
+            "button_link": "shopify:\/\/collections\/glow"
+          }
+        }
+      },
+      "block_order": [
+        "1656929702beb3d41a-0",
+        "a5e401fd-2ca9-4fcc-9511-86805b5243a0",
+        "20f910be-50f7-4c44-b243-137c444a57d5",
+        "00b053bf-f1a1-4bc7-95a8-d2b49d1600ac",
+        "8e40f059-7633-41fd-ab08-69374dc22c33"
+      ],
+      "settings": {
       }
     },
     "1656929100bd0cda9b": {
@@ -100,68 +155,14 @@
         "image_5": "shopify:\/\/shop_images\/Instagram2.png",
         "image_6": "shopify:\/\/shop_images\/Instagram5.png"
       }
-    },
-    "1656929702fc421f45": {
-      "type": "shop-by-collection",
-      "blocks": {
-        "1656929702beb3d41a-0": {
-          "type": "single_slide",
-          "settings": {
-            "collection_image": "shopify:\/\/shop_images\/Dew_Wet_Balm_Lifestyle_Image_2.png",
-            "button_text": "Complexion",
-            "button_link": "shopify:\/\/collections\/accessories"
-          }
-        },
-        "a5e401fd-2ca9-4fcc-9511-86805b5243a0": {
-          "type": "single_slide",
-          "settings": {
-            "collection_image": "shopify:\/\/shop_images\/Beauty_Oil_Lifestyle_3.png",
-            "button_text": "Glow",
-            "button_link": "shopify:\/\/collections\/clothing"
-          }
-        },
-        "20f910be-50f7-4c44-b243-137c444a57d5": {
-          "type": "single_slide",
-          "settings": {
-            "collection_image": "shopify:\/\/shop_images\/Model_Image_Twin_Flames-2.png",
-            "button_text": "Color",
-            "button_link": "shopify:\/\/collections\/color"
-          }
-        },
-        "00b053bf-f1a1-4bc7-95a8-d2b49d1600ac": {
-          "type": "single_slide",
-          "settings": {
-            "collection_image": "shopify:\/\/shop_images\/Model_Image_Twin_Flames.png",
-            "button_text": "Set & Seal",
-            "button_link": "shopify:\/\/collections\/complexion"
-          }
-        },
-        "8e40f059-7633-41fd-ab08-69374dc22c33": {
-          "type": "single_slide",
-          "settings": {
-            "collection_image": "shopify:\/\/shop_images\/Beauty_Oil_Lifestyle_3.png",
-            "button_text": "Beauty",
-            "button_link": "shopify:\/\/collections\/glow"
-          }
-        }
-      },
-      "block_order": [
-        "1656929702beb3d41a-0",
-        "a5e401fd-2ca9-4fcc-9511-86805b5243a0",
-        "20f910be-50f7-4c44-b243-137c444a57d5",
-        "00b053bf-f1a1-4bc7-95a8-d2b49d1600ac",
-        "8e40f059-7633-41fd-ab08-69374dc22c33"
-      ],
-      "settings": {
-      }
     }
   },
   "order": [
     "featured_collection",
     "1650980038fc3629f5",
     "1656928484d40c7480",
+    "1656929702fc421f45",
     "1656929100bd0cda9b",
-    "16569291615ea6e5eb",
-    "1656929702fc421f45"
+    "16569291615ea6e5eb"
   ]
 }
