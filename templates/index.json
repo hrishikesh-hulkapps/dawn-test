@@ -238,18 +238,6 @@
       "settings": {
       }
     },
-    "16569291615ea6e5eb": {
-      "type": "instagram-block",
-      "settings": {
-        "instagram_handle": "danessa_myricks",
-        "image_1": "shopify:\/\/shop_images\/Instagram4.png",
-        "image_2": "shopify:\/\/shop_images\/Instagram6.png",
-        "image_3": "shopify:\/\/shop_images\/Instagram1.png",
-        "image_4": "shopify:\/\/shop_images\/Instagram3.png",
-        "image_5": "shopify:\/\/shop_images\/Instagram2.png",
-        "image_6": "shopify:\/\/shop_images\/Instagram5.png"
-      }
-    },
     "1656930930091fa69c": {
       "type": "two-column-block",
       "blocks": {
@@ -266,10 +254,11 @@
         "1656930930a1a06546-1": {
           "type": "right_block",
           "settings": {
-            "large_heading_right": "",
-            "para_text_right": "",
-            "button_text_right": "",
-            "button_link_right": ""
+            "hero_image_right": "shopify:\/\/shop_images\/Group_455.png",
+            "large_heading_right": "Virtual Try-on",
+            "para_text_right": "Try on some of our most popular products!",
+            "button_text_right": "Shop Now",
+            "button_link_right": "shopify:\/\/collections\/clothing"
           }
         }
       },
@@ -278,6 +267,18 @@
         "1656930930a1a06546-1"
       ],
       "settings": {
+      }
+    },
+    "16569291615ea6e5eb": {
+      "type": "instagram-block",
+      "settings": {
+        "instagram_handle": "danessa_myricks",
+        "image_1": "shopify:\/\/shop_images\/Instagram4.png",
+        "image_2": "shopify:\/\/shop_images\/Instagram6.png",
+        "image_3": "shopify:\/\/shop_images\/Instagram1.png",
+        "image_4": "shopify:\/\/shop_images\/Instagram3.png",
+        "image_5": "shopify:\/\/shop_images\/Instagram2.png",
+        "image_6": "shopify:\/\/shop_images\/Instagram5.png"
       }
     }
   },
@@ -291,7 +292,7 @@
     "165693052767492b1a",
     "165693079404b700ac",
     "1656929100bd0cda9b",
-    "16569291615ea6e5eb",
-    "1656930930091fa69c"
+    "1656930930091fa69c",
+    "16569291615ea6e5eb"
   ]
 }
