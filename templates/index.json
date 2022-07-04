@@ -127,12 +127,21 @@
             "button_text": "Color",
             "button_link": "shopify:\/\/collections\/color"
           }
+        },
+        "00b053bf-f1a1-4bc7-95a8-d2b49d1600ac": {
+          "type": "single_slide",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/Model_Image_Twin_Flames.png",
+            "button_text": "Set & Seal",
+            "button_link": "shopify:\/\/collections\/complexion"
+          }
         }
       },
       "block_order": [
         "1656929702beb3d41a-0",
         "a5e401fd-2ca9-4fcc-9511-86805b5243a0",
-        "20f910be-50f7-4c44-b243-137c444a57d5"
+        "20f910be-50f7-4c44-b243-137c444a57d5",
+        "00b053bf-f1a1-4bc7-95a8-d2b49d1600ac"
       ],
       "settings": {
       }
