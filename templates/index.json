@@ -1,5 +1,19 @@
 {
   "sections": {
+    "16569312952db2bed2": {
+      "type": "cst-slider",
+      "settings": {
+        "hero_image_left": "shopify:\/\/shop_images\/Model_Image_Dew_Wet_Balm_b18dd11c-beef-43f6-ba94-ef664a0a0ea4.png",
+        "hero_image_left_mobile": "shopify:\/\/shop_images\/ModelMobile.png",
+        "small_heading": "NEW LOOK, SAME FORMULA!",
+        "large_heading": "Dew wet balms",
+        "para_text": "Effortless and easy option for accentuating natural skin highlights.",
+        "button_text": "Shop Now",
+        "button_link": "shopify:\/\/collections",
+        "hero_image_right": "shopify:\/\/shop_images\/Product_Image_Dew_Wet_Balm.png",
+        "hero_image_right_mobile": "shopify:\/\/shop_images\/CreamMobile.png"
+      }
+    },
     "1656930371174e1b5f": {
       "type": "spotlight-block",
       "settings": {
@@ -283,6 +297,7 @@
     }
   },
   "order": [
+    "16569312952db2bed2",
     "1656930371174e1b5f",
     "16569301476fe5675c",
     "featured_collection",
