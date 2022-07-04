@@ -172,10 +172,11 @@
         "1656930147920f9dce-1": {
           "type": "right_block",
           "settings": {
-            "large_heading_right": "",
-            "para_text_right": "",
-            "button_text_right": "",
-            "button_link_right": ""
+            "hero_image_right": "shopify:\/\/shop_images\/AdobeStock_251061394_Preview.png",
+            "large_heading_right": "Colorfix 24-Hour Cream",
+            "para_text_right": "High pigment, multipurpose liquid color for eyes, lips and cheeks!",
+            "button_text_right": "Shop Now",
+            "button_link_right": "shopify:\/\/collections\/set-seal"
           }
         }
       },
