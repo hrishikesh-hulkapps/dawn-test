@@ -135,13 +135,22 @@
             "button_text": "Set & Seal",
             "button_link": "shopify:\/\/collections\/complexion"
           }
+        },
+        "8e40f059-7633-41fd-ab08-69374dc22c33": {
+          "type": "single_slide",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/Beauty_Oil_Lifestyle_3.png",
+            "button_text": "Beauty",
+            "button_link": "shopify:\/\/collections\/glow"
+          }
         }
       },
       "block_order": [
         "1656929702beb3d41a-0",
         "a5e401fd-2ca9-4fcc-9511-86805b5243a0",
         "20f910be-50f7-4c44-b243-137c444a57d5",
-        "00b053bf-f1a1-4bc7-95a8-d2b49d1600ac"
+        "00b053bf-f1a1-4bc7-95a8-d2b49d1600ac",
+        "8e40f059-7633-41fd-ab08-69374dc22c33"
       ],
       "settings": {
       }
