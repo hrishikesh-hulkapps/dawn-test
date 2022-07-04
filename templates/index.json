@@ -41,7 +41,7 @@
         "para_text": "",
         "button_text": "",
         "button_link": "",
-        "bg_color": "#EEE3E0",
+        "bg_color": "#eee3e0",
         "swap_columns": false
       }
     },
@@ -65,12 +65,19 @@
           "settings": {
             "logo_image": "shopify:\/\/shop_images\/Image_15.png"
           }
+        },
+        "afecee06-c904-4237-bc8f-94b15f1c3440": {
+          "type": "single_slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/FORBES-TRANSPARENT-BACKGROUND.png"
+          }
         }
       },
       "block_order": [
         "165692881333729e46-0",
         "15677705-6c74-4fd8-b9cf-d2a6dfa05429",
-        "e3b2e43d-b4d1-474f-84b4-201e6f5a5016"
+        "e3b2e43d-b4d1-474f-84b4-201e6f5a5016",
+        "afecee06-c904-4237-bc8f-94b15f1c3440"
       ],
       "settings": {
       }
