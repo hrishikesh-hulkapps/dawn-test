@@ -35,6 +35,7 @@
 
   <div class="card-wrapper underline-links-hover">
     
+     {% render 'hulkapps-wishlist-collection-btn', productId: card_product.id, variantId: card_product.selected_or_first_available_variant.id %}
 
      <!-- Add to cart btn  -->
      <form method="post" action="/cart/add">
