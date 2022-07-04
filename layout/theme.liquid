@@ -227,7 +227,13 @@
     <script src="{{ 'component-product-alternate.js' | asset_url }}" defer></script>
 
 
-  {% include 'hulk_po_vd.liquid' %}</head>
+  {% include 'hulk_po_vd.liquid' %}<script type="text/javascript">if(typeof window.hulkappsWishlist === 'undefined') {
+        window.hulkappsWishlist = {};
+        }
+        window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
+        window.hulkappsWishlist.hasAppBlockSupport = '1';
+        </script>
+</head>
 
   <body class="gradient">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -284,5 +290,6 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  </body>
+  {% render 'hulkappsWishlistPopup' %}
+</body>
 </html>
