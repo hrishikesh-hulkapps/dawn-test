@@ -29,40 +29,7 @@
     },
     "1650980038fc3629f5": {
       "type": "image-block",
-      "blocks": {
-        "13886a18-dc8a-4e54-82d2-a33e08b12ba0": {
-          "type": "single_image",
-          "settings": {
-            "display_option": false,
-            "single_img": "shopify:\/\/shop_images\/Instagram2.png",
-            "single_image_title": "Set",
-            "collection_link": ""
-          }
-        },
-        "085240f5-aac6-4950-a7dc-4e8917c8e88d": {
-          "type": "single_image",
-          "settings": {
-            "display_option": false,
-            "single_img": "shopify:\/\/shop_images\/Instagram4.png",
-            "single_image_title": "Glow",
-            "collection_link": ""
-          }
-        },
-        "9f0ee5c9-c30e-4523-9252-754410f52cec": {
-          "type": "single_image",
-          "settings": {
-            "display_option": false,
-            "single_img": "shopify:\/\/shop_images\/Instagram5.png",
-            "single_image_title": "Color",
-            "collection_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "13886a18-dc8a-4e54-82d2-a33e08b12ba0",
-        "085240f5-aac6-4950-a7dc-4e8917c8e88d",
-        "9f0ee5c9-c30e-4523-9252-754410f52cec"
-      ],
+      "disabled": true,
       "settings": {
       }
     },
