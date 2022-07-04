@@ -54,24 +54,24 @@
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
 
-      
+    {% render 'hulkapps-wishlist-collection-btn', productId: card_product.id, variantId: card_product.selected_or_first_available_variant.id %}
+
     
       
     <!-- tag sale -->
-    {% for tag in card_product.tags %}
+<!--     {% for tag in card_product.tags %}
       {% if tag == 'SALE' %}
         <span class="sale-badge"> {{tag}} </span>
       {% endif %}
-    {% endfor %}
+    {% endfor %} -->
 
     <!-- new sale -->
-    {% for tag in card_product.tags %}
+<!--     {% for tag in card_product.tags %}
       {% if tag == 'new' %}
         <span class="new-badge"> {{tag}} </span>
       {% endif %}
-    {% endfor %}
+    {% endfor %} -->
 
-    {% render 'hulkapps-wishlist-collection-btn', productId: card_product.id, variantId: card_product.selected_or_first_available_variant.id %}
 
       <div class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
         {%- if card_product.featured_media -%}
