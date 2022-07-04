@@ -100,6 +100,24 @@
         "image_5": "shopify:\/\/shop_images\/Instagram2.png",
         "image_6": "shopify:\/\/shop_images\/Instagram5.png"
       }
+    },
+    "1656929702fc421f45": {
+      "type": "shop-by-collection",
+      "blocks": {
+        "1656929702beb3d41a-0": {
+          "type": "single_slide",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/Dew_Wet_Balm_Lifestyle_Image_2.png",
+            "button_text": "Complexion",
+            "button_link": "shopify:\/\/collections\/accessories"
+          }
+        }
+      },
+      "block_order": [
+        "1656929702beb3d41a-0"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -107,6 +125,7 @@
     "1650980038fc3629f5",
     "1656928484d40c7480",
     "1656929100bd0cda9b",
-    "16569291615ea6e5eb"
+    "16569291615ea6e5eb",
+    "1656929702fc421f45"
   ]
 }
