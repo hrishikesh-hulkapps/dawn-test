@@ -229,6 +229,26 @@
       },
       "cst-footer": {
         "type": "cst-footer",
+        "blocks": {
+          "0426ba6f-40cc-483e-9028-9b878baf79d9": {
+            "type": "footer_bottom",
+            "settings": {
+              "copyright_text": "@2022 Danessa Myricks Beauty",
+              "footer_bottom_menu": "footer",
+              "fb_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/Icon_awesome-facebook-f.svg?v=1651727312",
+              "show_fb_icon": false,
+              "ins_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/Icon_awesome-instagram.svg?v=1651727312",
+              "show_ins_icon": false,
+              "pin_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/Icon_awesome-pinterest.svg?v=1651727312",
+              "show_pin_icon": false,
+              "tk_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/Icon_simple-tiktok.svg?v=1651727312",
+              "show_tk_icon": false
+            }
+          }
+        },
+        "block_order": [
+          "0426ba6f-40cc-483e-9028-9b878baf79d9"
+        ],
         "settings": {
         }
       }
