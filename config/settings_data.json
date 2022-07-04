@@ -192,10 +192,26 @@
               "text_left": "DMB ANGELS",
               "text_right": "DMB UNIVERSITY"
             }
+          },
+          "3068b3fd-8ad1-421e-82d7-6c38c4fa5f72": {
+            "type": "main_header",
+            "settings": {
+              "logo_image": "shopify:\/\/shop_images\/Logo2x.png",
+              "header_menu": "main-menu",
+              "search_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/Group_459.svg?v=1651585216",
+              "show_search_icon": false,
+              "wishlist_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/Group_334.svg?v=1651585593",
+              "show_wishlist_icon": false,
+              "user_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/Group_339.svg?v=1651585584",
+              "show_user_icon": false,
+              "cart_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/Group_334.svg?v=1651585593",
+              "show_cart_icon": false
+            }
           }
         },
         "block_order": [
-          "40aaf83a-4c1a-4eb4-821f-9526d4e8b8f5"
+          "40aaf83a-4c1a-4eb4-821f-9526d4e8b8f5",
+          "3068b3fd-8ad1-421e-82d7-6c38c4fa5f72"
         ],
         "settings": {
         }
