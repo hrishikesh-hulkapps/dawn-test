@@ -35,6 +35,13 @@
 
   <div class="card-wrapper underline-links-hover">
 
+     <!-- Add to cart btn  -->
+     <form method="post" action="/cart/add">
+      <input type="hidden" name="id" value="{{ card_product.variants.first.id }}" />
+      <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
+      <input type="submit" value="Add to cart" class="btn btn-outline-dark btn-lg" />
+    
+    </form>
     
     <button class="btn btn-dark trigger" data-handle="{{card_product.handle}}">Quick View</button>
 
@@ -164,6 +171,7 @@
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '' %}
+
           </div>
         </div>
         {%- if show_quick_add -%}
@@ -240,6 +248,7 @@
         </div>
       </div>
     </div>
+   
   </div>
 {%- else -%}
   <div class="card-wrapper underline-links-hover">
@@ -280,6 +289,8 @@
               <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
             {%- endif -%}
             {% render 'price' %}
+
+            
           </div>
         </div>
       </div>

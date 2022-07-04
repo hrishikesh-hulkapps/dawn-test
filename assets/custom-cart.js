@@ -65,21 +65,36 @@ function updateCartAttirbutes(e) {
 // function to arrange data and call updateQTY for qty buttons 
 function getData(e) {
     console.log('in getData (from button)')
-
+    let gwp= 0;
     let currentQty = parseInt(e.target.parentNode.querySelector('.quantity-input').value);
-    let currentVariantid = e.target.parentNode.querySelector('.quantity-input').dataset.line;
+    let currentVariantid = e.target.parentNode.querySelector('.quantity-input').dataset.variantid;
+    // let currentVariantid = e.target.parentNode.querySelector('.quantity-input').dataset.line;
+
+    let currentProductType = e.target.parentNode.querySelector('.quantity-input').dataset.producttype || 0;
+    let currentProductUniqueId = e.target.parentNode.querySelector('.quantity-input').dataset.uniqueid || 0;
+
+    // console.log(currentProductType)
+    // console.log(currentProductUniqueId)
+    // return
+
     let action = e.target.name;
    
     if(action == 'plus') {
+        gwp = 1
         currentQty += 1;
         console.log(currentQty)
-        updateCart(currentQty, currentVariantid)
+        updateCart(currentQty, currentVariantid, gwp, currentProductType, currentProductUniqueId)
+        // gwpCheckCartTotal()
+        //updateUI()
+
     } else if(action == 'minus') {
+        gwp = -1
         console.log(currentQty)
 
         if(currentQty != 0) {
             currentQty -= 1;
-            updateCart(currentQty, currentVariantid)
+            updateCart(currentQty, currentVariantid, gwp, currentProductType, currentProductUniqueId)
+
         }
     }
     // console.log(e.target.name);
@@ -97,43 +112,166 @@ function getDataInput(e) {
 
 // function to get data from remove item button & call updateCart
 function getDataFromRemove(e) {
-    let currentVariantid = e.target.parentNode.dataset.line
+    let currentVariantid = e.target.parentNode.dataset.variantid
     let currentQuantity = 0;
     updateCart(currentQuantity, currentVariantid)
 }
 
-function updateCart(quantity, variantId) {
+function updateCart(quantity, variantId, gwp = 0, productType, productUniqueId) {
     // create data to pass 
     let data = {
-        'line': variantId,
+        'id': variantId,
         'quantity': quantity
     }
-    // console.log(data);
+
+    // bundle data
+    let mainProduct = {}
+    const key = variantId
+    mainProduct[key] = quantity
+
+    // let final;
+    // console.log(productType)
+    // console.log(productUniqueId)
     // return
-    // make post request
-    let requestURL = window.shopUrl + window.routes.cart_change_url + '.js';
-    // console.log(requestURL);
-    // return
+
+    if( productType == 'main-product' && productUniqueId !=0 ) {
+
+        // get cart data
+        let reqURL = window.shopUrl + '/cart.js'
+        fetch(reqURL)
+        .then(res => res.json()) 
+        .then(data => {
+            console.log('from getCartJSON')
+            // console.log(data)
+            let items = data.items
+
+            let temp=  {}
+            // find the id or addon products 
+            items.forEach(item => {
+                
+                if(item.properties != null ) {
+                     // check if there is subproduct for unique id 
+                    if(item.properties.uniqueId == productUniqueId && item.properties.productType == 'sub-product') {
+                        let k = item.variant_id
+                        temp[k] = quantity
+                        console.log(item.variant_id)
+                    }
+                }
+
+            });
+
+            // append to mainProduct variable 
+            let updates = Object.assign(mainProduct,temp);
+            updates = {
+                updates: updates
+            }
+
+            // make a update call 
+            updateBundle(updates, gwp);
+
+            // // gwp function call add
+            //  if( gwp == 1) {
+            //     gwpCheckCartTotal()
+            //     updateUI()
+            //     return
+            // }
+
+            // if( gwp == -1 ) {
+            //     gwpRemoveFromCart()
+            //     updateUI()
+            //     return
+            // }
+
+            // updateUI()
+            // return
+        })
+        .catch(error => {
+            console.log(error);
+        })
+        return
+
+    } else {
+
+        // make post request
+        let requestURL = window.shopUrl + window.routes.cart_change_url + '.js';
+        // console.log(requestURL);
+        // return
+        fetch(requestURL, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            let data = response.text();
+            // console.log(response);
+            // return
+            if (!response.ok) {
+                throw new Error("HTTP error" + response.status);
+            }
+            // alert('Added to cart');
+            console.log('updated the value ');
+
+            // gwp function call add
+            if( gwp == 1) {
+                gwpCheckCartTotal()
+                updateUI()
+                return
+            }
+
+            if( gwp == -1 ) {
+                gwpRemoveFromCart()
+                updateUI()
+                return
+            }
+        
+            // update UI 
+            updateUI();
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+    
+}
+
+// function to update bundle
+function updateBundle(updates, gwp) {
+
+    let requestURL = window.shopUrl + window.routes.cart_update_url + '.js';
     fetch(requestURL, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json"
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(updates)
     })
     .then(response => {
         let data = response.text();
-        // console.log(response);
-        // return
         if (!response.ok) {
             throw new Error("HTTP error" + response.status);
         }
-        // alert('Added to cart');
-        console.log('updated the value ');
+        console.log('updated the bundle product ');
 
-        // update UI 
-        updateUI();
+        // gwp function call add
+        if( gwp == 1) {
+            gwpCheckCartTotal()
+            updateUI()
+            return
+        }
+
+        if( gwp == -1 ) {
+            gwpRemoveFromCart()
+            updateUI()
+            return
+        }
+
+        updateUI()
+        return
+        // updateUI();
     })
     .catch(error => {
         console.log(error);
@@ -209,8 +347,10 @@ function updateUI() {
         setListeners();
 
         console.log('updateUI() done')
-        return;
-        
+      // return;
+
+        // check to hide free item   
+        disableGWP()
     })
     .catch(error => {
         console.log(error);
@@ -276,3 +416,221 @@ function getCartData() {
         console.log(error);
     })
 }
+
+// gwp js
+
+function gwpCheckCartTotal() {
+
+    let reqURL = window.shopUrl + '/cart.js'
+
+    fetch(reqURL)
+    .then(res => res.json()) 
+    .then(data => {
+       
+        let items = data.items
+        console.log('From gwpCheckCartTotal() -> ')
+        console.log(data)
+
+        let cartSubTotal = data.items_subtotal_price/100
+
+        const gwpAmount = document.querySelector('#gwp_amount').innerHTML;
+        const gwp_name = document.querySelector('#gwp_name').innerHTML;
+        console.log(cartSubTotal)
+        console.log(gwpAmount)
+
+        // check if total is > free product value
+        if( cartSubTotal > gwpAmount) {
+            console.log('yes greater')
+            
+            let flag = 0
+            // check if free product exists in cart
+            items.forEach(item => {
+
+                if( item.price == 0 && item.product_type == 'gwp') {
+                    // do nothing
+                    flag = 1;
+                } 
+            });
+
+            // gwp product exists
+            if(flag == 0) {
+                // add free product to cart 
+                // get product id 
+                let reqURL = window.shopUrl + '/products/' + gwp_name + '.json'
+                console.log(reqURL)
+
+                fetch(reqURL)
+                .then(res => res.json()) 
+                .then(data => {
+                    console.log(data.product.variants[0].id)
+                    let variantId = Number( data.product.variants[0].id )
+                    let quantity = 1; 
+                    // let gwp = 0
+
+                    gwpAddToCart(quantity, variantId)
+                    console.log('updated gwp in the cart')
+
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+            }
+
+        } else {
+
+            console.log('less crt tot')
+
+        }
+    //    return;
+       
+   })
+   .catch(error => {
+       console.log(error);
+   })
+}
+
+// add gwp to cart
+function gwpAddToCart(quantity, variantId) {
+
+     // create data to pass 
+    let items = [
+        {
+            id: variantId,
+            quantity: quantity
+        }
+    ]
+    let data = { items }
+    
+    // console.log(items);
+    // return
+    // make post request to add 
+    let requestURL = window.shopUrl + window.routes.cart_add_url + '.js';
+    // console.log(requestURL);
+    // return
+    fetch(requestURL, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        let data = response.text();
+        // console.log(response);
+        // return
+        if (!response.ok) {
+            throw new Error("HTTP error" + response.status);
+        }
+        // alert('Added to cart');
+        console.log('added gwp to cart');
+
+        // update UI 
+        updateUI();
+        // disableGWP()
+    })
+    .catch(error => {
+        console.log(error);
+    })
+
+}
+
+// function to disable gwp listners
+function disableGWP() {
+
+    const cartTable = document.querySelectorAll('#custom-cart-body tr');
+
+    cartTable.forEach(tr => {
+        let price = tr.querySelector('.item-total-price').textContent;
+        console.log(price)
+        if( price.trim() == '$0.00') {
+            console.log('found gwp')
+            tr.querySelector('.quantity-wrapper').style.cssText = 'display:none!important';
+
+        }
+        //  
+    });
+}
+
+function gwpRemoveFromCart() {
+
+    console.log('in gwpRemoveFromCart')
+    let reqURL = window.shopUrl + '/cart.js'
+
+    fetch(reqURL)
+    .then(res => res.json()) 
+    .then(data => {
+
+        let items = data.items
+
+        let cartSubTotal = data.items_subtotal_price/100
+
+        const gwpAmount = document.querySelector('#gwp_amount').innerHTML;
+        const gwp_name = document.querySelector('#gwp_name').innerHTML;
+
+        console.log(cartSubTotal)
+        console.log(gwpAmount)
+
+        if( cartSubTotal > gwpAmount) {
+            // do nothing
+        } else {
+            
+            // check if free product exists in cart
+            let flag = 0
+            items.forEach(item => {
+
+                if( item.price == 0 && item.product_type == 'gwp') {
+                    // do nothing
+                    flag = 1;
+                } 
+            });
+
+            if(flag == 1) {
+
+                // remove gwp from cart 
+                // get product id 
+                let reqURL = window.shopUrl + '/products/' + gwp_name + '.json'
+                console.log(reqURL)
+
+                fetch(reqURL)
+                .then(res => res.json()) 
+                .then(data => {
+                    console.log(data.product.variants[0].id)
+                    let variantId =  (data.product.variants[0].id).toString()
+                    let quantity = 0; 
+                    // let gwp = 0
+
+                    updateCart(quantity, variantId)
+                    // gwpAddToCart(quantity, variantId)
+                    console.log('removed gwp from cart')
+
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+            }
+
+        }
+
+    })
+    .catch(error => {
+        console.log(error);
+    })
+}
+
+// function getCartJSON() {
+
+//     let reqURL = window.shopUrl + '/cart.js'
+
+//     fetch(reqURL)
+//     .then(res => res.json()) 
+//     .then(data => {
+//         console.log('from getCartJSON')
+//         return data
+//     })
+//     .catch(error => {
+//         console.log(error);
+//     })
+// }
+
+disableGWP()

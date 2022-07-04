@@ -40,6 +40,10 @@ optionsSelect.forEach(option => {
 // get options on event change
 function variantChange(e) {
     let options = [];
+
+    // console.log(optionsSelect)
+    // return
+
     optionsSelect.forEach((select) => {
         options.push(select.value);
     })
@@ -171,7 +175,7 @@ function submitForm(e) {
             // console.log(addon.value);
             let data = {
                 id: addon.value,
-                quantity: 1,
+                quantity: quantity.value,
                 properties: {
                     uniqueId: uniqueId,
                     productType: 'sub-product'

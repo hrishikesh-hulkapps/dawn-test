@@ -28,16 +28,25 @@ window.onload = function() {
                 document.querySelector('.modal-html').append(doc.querySelector("#MainContent"));
 
                 // load js
-                var script = document.createElement("script");
-                script.src = "https://cdn.shopify.com/s/files/1/0639/8106/0337/t/4/assets/for-quickview.js?v=137001516344559235161655367625"; 
-                document.getElementsByTagName("head")[0].appendChild(script);
+                // var script = document.createElement("script");
+                // script.src = "https://cdn.shopify.com/s/files/1/0639/8106/0337/t/4/assets/for-quickview.js?v=137001516344559235161655367625"; 
+                // document.getElementsByTagName("head")[0].appendChild(script);
 
+            //    aadd listner to optin select
+                // const optionsSelect = document.querySelectorAll('.select-option');
+                // // set event listners
+                // optionsSelect.forEach(option => {
+                //     option.addEventListener('change', variantChange.bind(this));
+                // })    
+            
                 //add listner to swatch img
                 const cs = document.querySelectorAll('.swatch-image');
                 cs.forEach(li => {
                     li.addEventListener('click', updateVariant.bind(this));
                     console.log('added eve list to .swatchimg')
                 })
+
+               
               
             })
             .catch(error => console.error('Error:', error))
@@ -45,21 +54,21 @@ window.onload = function() {
     }
 
     // for color swatch liquid -- update variant for color swatch
-    function updateVariant(e) {
+    // function updateVariant(e) {
 
-        // get selected value 
-        // const selected = e.path[1].firstElementChild.innerHTML.trim();
-        const selected = e.path[1].dataset.color;
-        console.log(selected);
-        // return
+    //     // get selected value 
+    //     // const selected = e.path[1].firstElementChild.innerHTML.trim();
+    //     const selected = e.path[1].dataset.color;
+    //     console.log(selected);
+    //     // return
 
-        // update default select 
-        const colorDrop = document.querySelector('.color-drop');
+    //     // update default select 
+    //     const colorDrop = document.querySelector('.color-drop');
 
-        colorDrop.value = selected;
-        // call variant change
-        variantChange();
-    }
+    //     colorDrop.value = selected;
+    //     // call variant change
+    //     variantChange();
+    // }
         
     
     // function toggleModal(e) {
@@ -97,12 +106,8 @@ window.onload = function() {
         }
     }
 
-    
-
     // trigger.addEventListener("click", toggleModal);
     closeButton.addEventListener("click", hideModal);
     window.addEventListener("click", windowOnClick);
+
 }
-
-
- 

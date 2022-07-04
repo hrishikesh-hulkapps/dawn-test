@@ -223,15 +223,11 @@
     <script src="{{ 'custom-cart.js' | asset_url }}" defer></script>
 
     {{ 'product-alternate.css' | asset_url | stylesheet_tag }}
-    <script src="{{ 'product-alternate.js' | asset_url }}" defer></script>
+    <!-- <script src="{{ 'product-alternate.js' | asset_url }}" defer></script> -->
+    <script src="{{ 'component-product-alternate.js' | asset_url }}" defer></script>
 
-  <script type="text/javascript">if(typeof window.hulkappsWishlist === 'undefined') {
-        window.hulkappsWishlist = {};
-        }
-        window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
-        window.hulkappsWishlist.hasAppBlockSupport = '1';
-        </script>
-</head>
+
+  </head>
 
   <body class="gradient">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -288,6 +284,5 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  {% render 'hulkappsWishlistPopup' %}
-</body>
+  </body>
 </html>

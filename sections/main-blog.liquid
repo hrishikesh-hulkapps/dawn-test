@@ -14,7 +14,21 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  .badge-dark {
+    background: #000;
+  }
 {%- endstyle -%}
+
+<div class="tags-bottom-bar">
+  {% for tag in blog.all_tags %}
+    {% if current_tags contains tag %}
+      <span class="badge badge-pill badge-dark">{{ tag }}</span>
+    {% else %}
+      <span class="badge badge-pill badge-light">{{ tag | link_to_tag: tag }}</span>
+    {% endif %}
+  {% endfor %}
+
+</div>
 
 {%- paginate blog.articles by 6 -%}
   <div class="main-blog page-width section-{{ section.id }}-padding">
@@ -41,6 +55,7 @@
     {%- endif -%}
   </div>
 {%- endpaginate -%}
+
 
 {% schema %}
 {
