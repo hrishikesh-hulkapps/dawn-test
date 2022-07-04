@@ -207,11 +207,21 @@
               "cart_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/Group_334.svg?v=1651585593",
               "show_cart_icon": false
             }
+          },
+          "105f3d1d-bdd4-44d9-a7c3-3896e1ba27f0": {
+            "type": "bottom_bar",
+            "settings": {
+              "bold_text": "BACK in STOCK!",
+              "regular_text": "Infinite Chrome Flakes",
+              "url_text": "Shop Now",
+              "link_to": "shopify:\/\/collections"
+            }
           }
         },
         "block_order": [
           "40aaf83a-4c1a-4eb4-821f-9526d4e8b8f5",
-          "3068b3fd-8ad1-421e-82d7-6c38c4fa5f72"
+          "3068b3fd-8ad1-421e-82d7-6c38c4fa5f72",
+          "105f3d1d-bdd4-44d9-a7c3-3896e1ba27f0"
         ],
         "settings": {
         }
