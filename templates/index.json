@@ -111,10 +111,19 @@
             "button_text": "Complexion",
             "button_link": "shopify:\/\/collections\/accessories"
           }
+        },
+        "a5e401fd-2ca9-4fcc-9511-86805b5243a0": {
+          "type": "single_slide",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/Beauty_Oil_Lifestyle_3.png",
+            "button_text": "Glow",
+            "button_link": "shopify:\/\/collections\/clothing"
+          }
         }
       },
       "block_order": [
-        "1656929702beb3d41a-0"
+        "1656929702beb3d41a-0",
+        "a5e401fd-2ca9-4fcc-9511-86805b5243a0"
       ],
       "settings": {
       }
