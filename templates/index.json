@@ -143,6 +143,57 @@
         "swap_columns": false
       }
     },
+    "165693052767492b1a": {
+      "type": "about",
+      "blocks": {
+        "1656930527147c5ff5-0": {
+          "type": "icon_block",
+          "settings": {
+            "icon_1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/makeup.svg?v=1652687262",
+            "description_1": "Formulated for creative, multi-functional use",
+            "description_mobile_1": "multi-functional",
+            "icon_2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/heart.svg?v=1652687307",
+            "description_2": "Made for beginners and pros alike",
+            "description_mobile_2": "for beginners and pros",
+            "icon_3": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/rabbit.svg?v=1652687392",
+            "description_3": "All of our makeup is cruelty-free",
+            "description_mobile_3": "cruelty-free"
+          }
+        },
+        "1656930527147c5ff5-1": {
+          "type": "about_block",
+          "settings": {
+            "title": "Meet Danessa",
+            "description": "Self-Taught. Makeup Artist. Photographer. Entrepreneur. Founder. Mother. Black woman.",
+            "button_text_1": "About Danessa",
+            "button_link_1": "shopify:\/\/blogs\/news",
+            "button_text_2": "Learn from Danessa",
+            "button_link_2": "shopify:\/\/blogs\/health",
+            "left_image": "shopify:\/\/shop_images\/Image_20.png",
+            "right_image": "shopify:\/\/shop_images\/Group_456.png"
+          }
+        }
+      },
+      "block_order": [
+        "1656930527147c5ff5-0",
+        "1656930527147c5ff5-1"
+      ],
+      "settings": {
+      }
+    },
+    "165693079404b700ac": {
+      "type": "hero-text",
+      "settings": {
+        "hero_image": "shopify:\/\/shop_images\/Beauty_Oil_Lifestyle.png",
+        "small_heading": "NOURISHES AND SOOTHES SKIN",
+        "large_heading": "Hydrating Beauty Oil",
+        "para_text": "A dry, lightweight and fast-absorbing luxury facial oil designed to work with all skin types. Formulated with our proprietary blend of 10 nourishing oils for hydration and natural radiance.",
+        "button_text": "Shop Now",
+        "button_link": "shopify:\/\/collections",
+        "bg_color": "#ccaca3",
+        "swap_columns": true
+      }
+    },
     "1656929100bd0cda9b": {
       "type": "in-the-press",
       "blocks": {
@@ -198,44 +249,6 @@
         "image_5": "shopify:\/\/shop_images\/Instagram2.png",
         "image_6": "shopify:\/\/shop_images\/Instagram5.png"
       }
-    },
-    "165693052767492b1a": {
-      "type": "about",
-      "blocks": {
-        "1656930527147c5ff5-0": {
-          "type": "icon_block",
-          "settings": {
-            "icon_1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/makeup.svg?v=1652687262",
-            "description_1": "Formulated for creative, multi-functional use",
-            "description_mobile_1": "multi-functional",
-            "icon_2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/heart.svg?v=1652687307",
-            "description_2": "Made for beginners and pros alike",
-            "description_mobile_2": "for beginners and pros",
-            "icon_3": "https:\/\/cdn.shopify.com\/s\/files\/1\/0639\/8106\/0337\/files\/rabbit.svg?v=1652687392",
-            "description_3": "All of our makeup is cruelty-free",
-            "description_mobile_3": "cruelty-free"
-          }
-        },
-        "1656930527147c5ff5-1": {
-          "type": "about_block",
-          "settings": {
-            "title": "Meet Danessa",
-            "description": "Self-Taught. Makeup Artist. Photographer. Entrepreneur. Founder. Mother. Black woman.",
-            "button_text_1": "About Danessa",
-            "button_link_1": "shopify:\/\/blogs\/news",
-            "button_text_2": "Learn from Danessa",
-            "button_link_2": "shopify:\/\/blogs\/health",
-            "left_image": "shopify:\/\/shop_images\/Image_20.png",
-            "right_image": "shopify:\/\/shop_images\/Group_456.png"
-          }
-        }
-      },
-      "block_order": [
-        "1656930527147c5ff5-0",
-        "1656930527147c5ff5-1"
-      ],
-      "settings": {
-      }
     }
   },
   "order": [
@@ -245,8 +258,9 @@
     "16569301476fe5675c",
     "1656929702fc421f45",
     "1656928484d40c7480",
+    "165693052767492b1a",
+    "165693079404b700ac",
     "1656929100bd0cda9b",
-    "16569291615ea6e5eb",
-    "165693052767492b1a"
+    "16569291615ea6e5eb"
   ]
 }
