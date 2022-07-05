@@ -137,6 +137,7 @@
     },
     "image-with-text": {
       "type": "image-with-text",
+      "disabled": true,
       "blocks": {
         "image-with-text-0": {
           "type": "heading",
@@ -172,6 +173,7 @@
     },
     "multicolumn": {
       "type": "multicolumn",
+      "disabled": true,
       "blocks": {
         "column-0": {
           "type": "column",
@@ -215,6 +217,7 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -228,23 +231,6 @@
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 28
-      }
-    },
-    "165696105106241d43": {
-      "type": "apps",
-      "blocks": {
-        "40342e7b-c792-45d8-8a76-31d2c60d6f4d": {
-          "type": "shopify:\/\/apps\/yotpo-product-reviews-photos\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-          "settings": {
-            "product": "{{product}}"
-          }
-        }
-      },
-      "block_order": [
-        "40342e7b-c792-45d8-8a76-31d2c60d6f4d"
-      ],
-      "settings": {
-        "include_margins": true
       }
     },
     "1657014658729b488c": {
@@ -273,6 +259,23 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "165696105106241d43": {
+      "type": "apps",
+      "blocks": {
+        "40342e7b-c792-45d8-8a76-31d2c60d6f4d": {
+          "type": "shopify:\/\/apps\/yotpo-product-reviews-photos\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "40342e7b-c792-45d8-8a76-31d2c60d6f4d"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -281,7 +284,7 @@
     "image-with-text",
     "multicolumn",
     "product-recommendations",
-    "165696105106241d43",
-    "1657014658729b488c"
+    "1657014658729b488c",
+    "165696105106241d43"
   ]
 }
