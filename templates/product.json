@@ -44,9 +44,28 @@
             "show_dynamic_checkout": true
           }
         },
+        "2d6c2bbe-0ca9-46aa-a1ad-3f385c19ff88": {
+          "type": "shopify:\/\/apps\/product-reviews-ugc-with-q-a\/blocks\/average-review\/34006358-52bd-4ec7-8c78-200fe58b77ba",
+          "settings": {
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
+          }
+        },
+        "7c2674f4-86bb-4278-b4ab-ec5ef7043d4b": {
+          "type": "shopify:\/\/apps\/advanced-wishlist\/blocks\/wishlist-btn\/330d9272-08ea-4193-b3e0-475a69fa65fa",
+          "settings": {
+            "theme_color": "#ccaca3",
+            "button_style": "style_4",
+            "button_border": 0,
+            "button_border_radius": 0,
+            "button_vertical_space": 9,
+            "button_horizontal_space": 16,
+            "button_text_color": "#ffffff",
+            "button_background": "#ccaca3",
+            "border_color": "#5c6ac4"
           }
         },
         "collapsible-row-0": {
@@ -100,7 +119,9 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "2d6c2bbe-0ca9-46aa-a1ad-3f385c19ff88",
         "description",
+        "7c2674f4-86bb-4278-b4ab-ec5ef7043d4b",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
