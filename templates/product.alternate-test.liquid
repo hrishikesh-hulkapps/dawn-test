@@ -27,6 +27,8 @@
             <p class="" id="price-box"> {{ product.price | money }} </p>
           
           	<div data-hulkapps-reviews data-hulkapps-reviews-product-id="{{ product.id }}"></div>
+          
+          {% render 'hulkapps-wishlist-product-btn' %}
 
 
             <!-- <div class="addon-block my-5">
