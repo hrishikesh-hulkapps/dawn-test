@@ -40,7 +40,7 @@
                     <div class="addon-data">
                         <input type="checkbox" value="{{ variant_addon.id }}"> Add  
                         <a href="{{ product_addon.url }}" target="_blank"> {{ product_addon.title }}</a>
-                        <span> (Price: {{ product_addon.price | | money }}) </span>
+                        <span> (Price: {{ product_addon.price | money }}) </span>
                     </div>
                 {% endfor %}
             </div> -->
@@ -229,7 +229,7 @@
                             <div class="free-product-data">
                                 <input type="checkbox" value="{{ variant_addon.id }}" checked name="id[]"> This will be added to cart   
                                 <a href="{{ product_addon.url }}" target="_blank"> {{ product_addon.title }}</a>
-                                <span> (Price: {{ product_addon.price | | money }}) </span>
+                                <span> (Price: {{ product_addon.price | money }}) </span>
                             </div>
     
                         {% endif %}
