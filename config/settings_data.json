@@ -289,6 +289,12 @@
         "disabled": false,
         "settings": {
         }
+      },
+      "682394761717052806": {
+        "type": "shopify:\/\/apps\/trust-badge-master\/blocks\/app-embed\/268c65b9-8f6b-465d-9ba7-22a9aa3689e6",
+        "disabled": false,
+        "settings": {
+        }
       }
     }
   },
