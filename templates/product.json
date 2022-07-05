@@ -246,6 +246,33 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "1657014658729b488c": {
+      "type": "apps",
+      "blocks": {
+        "964b7194-cac3-494d-af94-77df12039924": {
+          "type": "shopify:\/\/apps\/trust-badge-master\/blocks\/trustbadge-div-block\/268c65b9-8f6b-465d-9ba7-22a9aa3689e6",
+          "settings": {
+            "badge_enable": false,
+            "badge_font_color": "#ffffff",
+            "badge_fill_color": "#00a9a2",
+            "icon_alignment": "center",
+            "mobile_icon_size": 100,
+            "icon_size": 135,
+            "badge_heading": "Buy with confidence",
+            "badge_heading_font": "helvetica_n4",
+            "font_size": 20,
+            "text_alignment": "center",
+            "heading_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "964b7194-cac3-494d-af94-77df12039924"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -254,6 +281,7 @@
     "image-with-text",
     "multicolumn",
     "product-recommendations",
-    "165696105106241d43"
+    "165696105106241d43",
+    "1657014658729b488c"
   ]
 }
