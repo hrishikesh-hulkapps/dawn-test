@@ -115,7 +115,7 @@
                                                         {%- endfor -%}
                                                         {%- endif -%}
             
-<span data-hulkapps-line-properties>
+<span  data-hulkapps-line-properties data-hulkapps-line-properties>
                                                         {%- for property in item.properties -%}
                                                     
                                                             {%- assign property_first_char = property.first | slice: 0 -%}
@@ -139,6 +139,7 @@
                                                                     
                                                                 {%- endfor -%}
 </span>
+
 
                                                             </div>
                                                             {%- endif -%}
