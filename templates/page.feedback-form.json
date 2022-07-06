@@ -6,9 +6,27 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "1657089044a7feedd6": {
+      "type": "apps",
+      "blocks": {
+        "19b35d0b-327d-4ff5-8985-9c84706fcf02": {
+          "type": "shopify:\/\/apps\/form-builder-with-file-upload\/blocks\/form-block\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+          "settings": {
+            "form_uuid": "iXfdFkV0Br_4UvaJxvYgnQ"
+          }
+        }
+      },
+      "block_order": [
+        "19b35d0b-327d-4ff5-8985-9c84706fcf02"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1657089044a7feedd6"
   ]
 }
