@@ -139,7 +139,7 @@
                                                                     
                                                                 {%- endfor -%}
 </span>
-<button type='button' style='display: none;' class='edit_cart_option btn btn--primary button' data-product_id='{{item.product_id}}' data-key='{{item.key}}' data-variant_id='{{item.variant_id}}' data-quantity='{{item.quantity}}'>Edit Options</button>
+
                                                             </div>
                                                             {%- endif -%}
                                                         {%- endfor -%}
@@ -190,7 +190,7 @@
             
                     <div class="cart-subtotal cart-total my-4" style="text-align: right;">
                     
-                        <h2 class="mx-5 price"> {{ cart.total_price | money }} </h2>
+                        <h2  data-hulkapps-cart-total class="mx-5 price"> {{ cart.total_price | money }} </h2>
                     </div>
             
                 </div>
