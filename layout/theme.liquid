@@ -237,6 +237,8 @@
         window.hulkappsWishlist.hasAppBlockSupport = '1';
         </script>
 {% render 'hulkapps-reorder-css' %}
+    
+    {% if template contains 'collection' %}{{ 'https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937' | script_tag }}{% endif %}
 </head>
 
   <body class="gradient">
