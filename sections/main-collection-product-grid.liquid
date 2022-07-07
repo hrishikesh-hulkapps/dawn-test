@@ -188,13 +188,19 @@
             </ul>
     	
 
-            
+            <div id="Huratips-Pagination">
+              {% if paginate.next %}
+              <a href="{{ paginate.next.url }}">Loading More</a>
+              {% endif %}  
+          </div>
 
+            {% comment %}
            {%- if paginate.pages > 1 -%}
             
-<!--               {% render 'pagination', paginate: paginate, anchor: '' %} -->
+           {% render 'pagination', paginate: paginate, anchor: '' %} 
             {%- endif -%}
-
+			{% endcomment %}
+            
             
           </div>
         {%- endif -%}
