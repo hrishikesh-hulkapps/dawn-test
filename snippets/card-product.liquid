@@ -143,6 +143,10 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
+          
+         <div data-hulkapps-reviews data-hulkapps-reviews-product-id="{{ card_product.id }}"></div>
+
+          
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
@@ -175,7 +179,6 @@
 
             {% render 'price', product: card_product, price_class: '' %}
             
-            <div data-hulkapps-reviews data-hulkapps-reviews-product-id="{{ product.id }}"></div>
 
 
           </div>
