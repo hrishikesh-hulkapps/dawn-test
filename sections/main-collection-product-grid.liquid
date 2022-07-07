@@ -187,17 +187,25 @@
               
             </ul>
     	
-            <div id="Huratips-Pagination">
+<!--             <div id="Huratips-Pagination">
               {% if paginate.next %}
               <a href="{{ paginate.next.url }}">Loading More</a>
               {% endif %}  
-          </div>
+          </div> -->
             
-            {% comment %}
+<!--             {% comment %} -->
            {%- if paginate.pages > 1 -%}
+            <input type="hidden" value="{{ paginate.next.url }}" data-next-url>
+     	<input type="hidden" value="{{ paginate.pages }}" data-total-pages>
+        <input type="hidden" value="{{ paginate.current_page  }}" data-current-page>
+        <div class="load-more_wrap">
+          <button class="btn js-load-more">
+            <span load-more-text>Load more</span>
+            <span class="hide" loader>{% include 'icon-spinner' %}</span>
+          </but
               {% render 'pagination', paginate: paginate, anchor: '' %}
             {%- endif -%}
-            {% endcomment %}
+<!--             {% endcomment %} -->
             
           </div>
         {%- endif -%}
