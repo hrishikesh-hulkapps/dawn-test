@@ -156,6 +156,8 @@
             <ul id="product-grid" data-id="{{ section.id }}" class="
               grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
               grid--{{ section.settings.columns_desktop }}-col-desktop">
+              
+              <div id="Huratips-Loop" >
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
@@ -181,17 +183,35 @@
 
                 </li>
               {%- endfor -%}
+              </div>
+              
             </ul>
-    
+    	
+            <div id="Huratips-Pagination">
+              {% if paginate.next %}
+              <a href="{{ paginate.next.url }}">Loading More</a>
+              {% endif %}  
+          </div>
+            
             {%- if paginate.pages > 1 -%}
               {% render 'pagination', paginate: paginate, anchor: '' %}
             {%- endif -%}
+            
           </div>
         {%- endif -%}
       {%- endpaginate -%}
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var endlessScroll = new Ajaxinate({
+      container: '#Huratips-Loop',
+      pagination: '#Huratips-Pagination'
+    });
+  });
+</script>
 
 
 {% schema %}
