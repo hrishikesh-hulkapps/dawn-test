@@ -194,12 +194,12 @@
               {% endif %}  
           </div>
 
-            
+            {% comment %}
            {%- if paginate.pages > 1 -%}
             
            {% render 'pagination', paginate: paginate, anchor: '' %} 
             {%- endif -%}
-
+			{% endcomment %}
             
             
           </div>
@@ -210,12 +210,12 @@
 </div>
 
 <script>
-//   document.addEventListener("DOMContentLoaded", function() {
-//     var endlessScroll = new Ajaxinate({
-//       container: '#product-grid',
-//       pagination: '#Huratips-Pagination'
-//     });
-//   });
+  document.addEventListener("DOMContentLoaded", function() {
+    var endlessScroll = new Ajaxinate({
+      container: '#product-grid',
+      pagination: '#Huratips-Pagination'
+    });
+  });
   
   
   
