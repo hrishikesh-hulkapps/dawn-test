@@ -187,13 +187,9 @@
               
             </ul>
     	
-<!--             <div id="Huratips-Pagination">
-              {% if paginate.next %}
-              <a href="{{ paginate.next.url }}">Loading More</a>
-              {% endif %}  
-          </div> -->
+
             
-<!--             {% comment %} -->
+
            {%- if paginate.pages > 1 -%}
             <input type="hidden" value="{{ paginate.next.url }}" data-next-url>
      	<input type="hidden" value="{{ paginate.pages }}" data-total-pages>
@@ -205,7 +201,7 @@
           </but
               {% render 'pagination', paginate: paginate, anchor: '' %}
             {%- endif -%}
-<!--             {% endcomment %} -->
+
             
           </div>
         {%- endif -%}
