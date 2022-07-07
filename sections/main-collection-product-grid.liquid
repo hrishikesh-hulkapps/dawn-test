@@ -193,7 +193,11 @@
               {% endif %}  
           </div>
             
-           
+            {% comment %}
+           {%- if paginate.pages > 1 -%}
+              {% render 'pagination', paginate: paginate, anchor: '' %}
+            {%- endif -%}
+            {% endcomment %}
             
           </div>
         {%- endif -%}
