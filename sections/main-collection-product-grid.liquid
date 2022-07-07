@@ -157,7 +157,7 @@
               grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
               grid--{{ section.settings.columns_desktop }}-col-desktop">
               
-              <div id="Huratips-Loop" >
+            
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
@@ -183,7 +183,7 @@
 
                 </li>
               {%- endfor -%}
-              </div>
+           
               
             </ul>
     	
@@ -205,7 +205,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     var endlessScroll = new Ajaxinate({
-      container: '#Huratips-Loop',
+      container: '#product-grid',
       pagination: '#Huratips-Pagination'
     });
   });
