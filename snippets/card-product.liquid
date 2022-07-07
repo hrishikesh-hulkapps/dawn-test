@@ -35,7 +35,10 @@
 
   <div class="card-wrapper underline-links-hover">
     
-    
+    <div data-hulkapps-reviews data-hulkapps-reviews-product-id="{{ card_product.id }}"></div>
+
+      <!--  wishlist button -->
+	{% render 'hulkapps-wishlist-collection-btn', productId: card_product.id, variantId: card_product.selected_or_first_available_variant.id %}
     
      <!-- Add to cart btn  -->
      <form method="post" action="/cart/add">
@@ -56,10 +59,7 @@
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
 
-    <div data-hulkapps-reviews data-hulkapps-reviews-product-id="{{ card_product.id }}"></div>
-
-      <!--  wishlist button -->
-	{% render 'hulkapps-wishlist-collection-btn', productId: card_product.id, variantId: card_product.selected_or_first_available_variant.id %}
+    
       
     <!-- tag sale -->
     {% for tag in card_product.tags %}
