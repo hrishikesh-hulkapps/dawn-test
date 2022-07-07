@@ -313,6 +313,7 @@
     },
     "165701481356f0917c": {
       "type": "two-column-block",
+      "disabled": true,
       "blocks": {
         "165701481392ca4d4b-0": {
           "type": "left_block",
