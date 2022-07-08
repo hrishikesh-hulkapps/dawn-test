@@ -27,6 +27,11 @@
           "settings": {
           }
         },
+        "3313bfc8-7bbd-4418-b10e-10ed09182e92": {
+          "type": "shopify:\/\/apps\/product-reviews-ugc-with-q-a\/blocks\/average-review\/34006358-52bd-4ec7-8c78-200fe58b77ba",
+          "settings": {
+          }
+        },
         "355d5a9a-339f-4ef9-9987-1971ee1686be": {
           "type": "shopify:\/\/apps\/yotpo-product-reviews-photos\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
           "settings": {
@@ -48,11 +53,6 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true
-          }
-        },
-        "2d6c2bbe-0ca9-46aa-a1ad-3f385c19ff88": {
-          "type": "shopify:\/\/apps\/product-reviews-ugc-with-q-a\/blocks\/average-review\/34006358-52bd-4ec7-8c78-200fe58b77ba",
-          "settings": {
           }
         },
         "description": {
@@ -122,11 +122,11 @@
         "title",
         "caption",
         "price",
+        "3313bfc8-7bbd-4418-b10e-10ed09182e92",
         "355d5a9a-339f-4ef9-9987-1971ee1686be",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "2d6c2bbe-0ca9-46aa-a1ad-3f385c19ff88",
         "description",
         "7c2674f4-86bb-4278-b4ab-ec5ef7043d4b",
         "collapsible-row-0",
@@ -380,6 +380,22 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "16572734768fa039b5": {
+      "type": "apps",
+      "blocks": {
+        "b0bb8d61-c4e6-4061-bfb7-c0e860a1a13c": {
+          "type": "shopify:\/\/apps\/product-reviews-ugc-with-q-a\/blocks\/review-list\/34006358-52bd-4ec7-8c78-200fe58b77ba",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "b0bb8d61-c4e6-4061-bfb7-c0e860a1a13c"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -392,6 +408,7 @@
     "1657014658729b488c",
     "165701481356f0917c",
     "1657175850c106fb8b",
-    "16572725862657cde2"
+    "16572725862657cde2",
+    "16572734768fa039b5"
   ]
 }
