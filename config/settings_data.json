@@ -278,12 +278,6 @@
         "settings": {
         }
       },
-      "18218067344242134805": {
-        "type": "shopify:\/\/apps\/product-reviews-ugc-with-q-a\/blocks\/app\/34006358-52bd-4ec7-8c78-200fe58b77ba",
-        "disabled": false,
-        "settings": {
-        }
-      },
       "682394761717052806": {
         "type": "shopify:\/\/apps\/trust-badge-master\/blocks\/app-embed\/268c65b9-8f6b-465d-9ba7-22a9aa3689e6",
         "disabled": false,
@@ -305,6 +299,12 @@
       "10042746950867549768": {
         "type": "shopify:\/\/apps\/hulk-product-options\/blocks\/app-embed\/380168ef-9475-4244-a291-f66b189208b5",
         "disabled": false,
+        "settings": {
+        }
+      },
+      "18218067344242134805": {
+        "type": "shopify:\/\/apps\/product-reviews-ugc-with-q-a\/blocks\/app\/34006358-52bd-4ec7-8c78-200fe58b77ba",
+        "disabled": true,
         "settings": {
         }
       }
