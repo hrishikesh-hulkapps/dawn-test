@@ -181,6 +181,19 @@
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '' %}
+           
+            <div class="yotpo bottomLine"
+              data-appkey="ytkTCEpIzUjlaBo0fFxgqWm7ixlOz4i5H7FL1IDy"
+              data-domain="{{shop.permanent_domain | escape }}"
+              data-product-id="{{ card_product.id }}"
+              data-product-models="{{ card_product.id }}"
+              data-name="{{ card_product.title | escape }}"
+              data-url="{{ shop.url }}{{ card_product.url }}"
+              data-image-url="{{ card_product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+              data-description="{{ card_product.description | escape }}"
+              data-bread-crumbs="{% for tag in card_product.tags %}{{ tag | escape }};{% endfor %}">
+          </div>
+
             
 			<div data-hulkapps-reviews data-hulkapps-reviews-product-id="{{ card_product.id }}"></div>
 

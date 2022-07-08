@@ -20,6 +20,9 @@
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
+    #BIS_trigger {
+      margin-top: 10px;
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
@@ -217,6 +220,7 @@
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
             </div>
+          
         
 
             {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
