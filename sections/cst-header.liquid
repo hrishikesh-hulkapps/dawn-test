@@ -1,0 +1,354 @@
+ <!-- Bootstrap 5.1.3  -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+{{ 'ct-section-header.css' | asset_url | stylesheet_tag }}
+
+{% comment %} Header > Top Bar {% endcomment %}
+<div class="container-fluid d-none d-sm-block">
+{%- for block in section.blocks -%}
+    {%- case block.type -%}
+        {%- when 'top_bar' -%}
+        <div class="row">
+            <div class="col text-center align-middle top-bar-left">
+                <p> {{ block.settings.text_left }} </p>
+            </div>
+            <div class="col text-center top-bar-right">
+                <p> {{ block.settings.text_right }} </p>
+            </div>
+        </div>
+        
+    {%- endcase -%}
+{%- endfor -%}    
+</div>
+
+{% comment %} Header > Header -> Main Navbar {% endcomment %}
+
+{%- for block in section.blocks -%}
+    {%- case block.type -%}
+        {%- when 'main_header' -%}
+
+
+<div class="container-fluid  align-items-center" id="mainheader" style="background-color: #000;">
+    
+    <div class="row align-items-center" style="height: 100px;">
+        <div class="col-3 header-logo text-left">
+            <a class="navbar-brand" href="#">
+                {% if block.settings.logo_image %}
+                <img src="{{ block.settings.logo_image |  image_url: width: 220 }}" alt="Danessa Myricks Beauty" width="220" height="70" loading="lazy" style="max-width: 210px;">
+                {% endif %}
+            </a>
+
+        </div>
+        
+        <div class="col-6 header-nav text-center">
+            <ul class="header-menu"> 
+            {% assign menu = block.settings.header_menu %}
+            {% for link in menu.links %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ link.url }}"> {{ link.title }} </a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="col-3 header-icons text-right">
+
+            <ul class="align-items-center d-flex justify-content-end list-unstyled">
+                                
+                {% if block.settings.show_search_icon == false %}
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="#" name="account" title="account" rel="nofollow" aria-label="Search">
+                            <img src="{{ block.settings.search_icon }}" alt="" loading="lazy">
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if block.settings.show_wishlist_icon == false %}
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="/apps/advanced-wishlist" name="account" title="account" rel="nofollow" aria-label="Wishlist">
+                            <img src="{{ block.settings.wishlist_icon }}" alt="">
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if block.settings.show_user_icon == false %}
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="/account/login" name="account" title="account" rel="nofollow" aria-label="Account">
+                            <img src="{{ block.settings.user_icon }}" alt="">
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if block.settings.show_cart_icon == false %}
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="/cart" name="account" title="account" rel="nofollow" aria-label="Cart">
+                            <img src="{{ block.settings.cart_icon }}" alt="">
+                        </a>
+                    </li>
+                {% endif %}
+
+            </ul>
+            
+        </div>
+    </div>
+   
+</div>
+
+    {%- endcase -%}
+{%- endfor -%}      
+
+
+{% comment %} Header > Bottom Bar (FLEX) {% endcomment %}
+<div class="container-fluid bottom-bar-holder" style="padding: 0;">
+    {%- for block in section.blocks -%}
+        {%- case block.type -%}
+            {%- when 'bottom_bar' -%}
+          
+            
+                <div class="bottom-bar">
+                    <div class="icon-block d-flex flex-md-row align-items-center py-3 justify-content-between">
+
+                        <div class="px-4 text-center align-self-center d-none d-sm-block">
+                           
+                        </div>
+
+                        <div class="px-4 px-sm-0 text-center align-self-center">
+                            <img class="mr-2" src="https://cdn.shopify.com/s/files/1/0639/8106/0337/files/Icon_weather-stars.svg?v=1651556498" width="23" height="23" loading="lazy">
+                            <b class="mr-2 bold-text"> {{ block.settings.bold_text }} </b>
+                            <span class="mr-2"> {{ block.settings.regular_text }}  </span>
+                            <span class="pipe">|</span> 
+                            <a href="{{ block.settings.link_to }}" class="link-text-bottom-bar"> {{ block.settings.url_text }}</a>
+                        </div>
+                        <div class="align-self-center" style="color: #fff;">
+                            <span style="float: right;" class="close-holder">
+                                <img src="https://cdn.shopify.com/s/files/1/0639/8106/0337/files/close_icon.svg?v=1651649649" alt="">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+           
+            {%- endcase -%}
+        {%- endfor -%}   
+</div>
+
+
+<!-- header test -->
+{%- for block in section.blocks -%}
+    {%- case block.type -%}
+        {%- when 'main_header' -%}
+
+<ul> 
+    {% assign menu = block.settings.header_menu %}
+    
+
+    {% for link in linklists[block.settings.header_menu].links %}
+    {% assign child_list_handle = link.title | handleize %}
+    
+    {% if menus[child_list_handle].links != blank %}
+
+        {% assign to_print =  child_list_handle %}    
+   
+        {%- liquid 
+            assign menuType = 'normal'
+            assign megaMenuBlock = null
+
+            for block in section.blocks
+                if block.type == 'megamenu' and block.settings.title == link.title
+                    assign menuType = 'megamenu'
+                    assign megaMenuBlock = block.settings
+                    break
+                endif
+            endfor
+        -%}
+
+
+    {% endif %}
+
+    {% endfor %}
+
+</ul>
+
+    {%- endcase -%}
+    {%- endfor -%}      
+<!-- header test end -->
+
+{% schema %}
+{
+    "name": "Header",
+	"tag": "section",
+	"class": "ct-header",
+    "blocks": [ 
+        {
+            "name": "Top Bar",
+            "type": "top_bar",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "text_left",
+                    "label": "Left Side text"
+                },
+                {
+                    "type": "text",
+                    "id": "text_right",
+                    "label": "Right Side text"
+                }
+            ]
+        },
+        {
+            "name": "Main Header",
+            "type": "main_header",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "logo_image",
+                    "label": "Logo image"
+                },
+                {
+                    "type": "link_list",
+                    "id": "header_menu",
+                    "label": "Menu"
+                }, 
+                {
+                    "type": "textarea",
+                    "id": "search_icon",
+                    "label": "Search Icon Link"
+                }, 
+                {
+                    "type": "checkbox",
+                    "id": "show_search_icon",
+                    "label": "Check to hide",
+                    "default": false
+                },
+                {
+                    "type": "textarea",
+                    "id": "wishlist_icon",
+                    "label": "Wishlist icon"
+                }, 
+                {
+                    "type": "checkbox",
+                    "id": "show_wishlist_icon",
+                    "label": "Check to hide",
+                    "default": false
+                },
+                {
+                    "type": "textarea",
+                    "id": "user_icon",
+                    "label": "User icon"
+                }, 
+                {
+                    "type": "checkbox",
+                    "id": "show_user_icon",
+                    "label": "Check to hide",
+                    "default": false
+                },
+                {
+                    "type": "textarea",
+                    "id": "cart_icon",
+                    "label": "Cart icon"
+                }, 
+                {
+                    "type": "checkbox",
+                    "id": "show_cart_icon",
+                    "label": "Check to hide",
+                    "default": false
+                }
+            ]
+        },  
+        {
+            "name": "Bottom Bar",
+            "type": "bottom_bar",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "bold_text",
+                    "label": "Bold text"
+                },
+                {
+                    "type": "text",
+                    "id": "regular_text",
+                    "label": "Regular text"
+                },
+                {
+                    "type": "text",
+                    "id": "url_text",
+                    "label": "Link text"
+                },
+                {
+                    "type": "url",
+                    "id": "link_to",
+                    "label": "Select link"
+                }
+            ]
+        },
+        {
+            "type": "megamenu",
+            "name": "MegaMenu",
+            "settings": [
+              {
+                "type": "text",
+                "id": "title",
+                "label": "Menu Title",
+                "info": "Use Exact string as header"
+              },
+              {
+                  "type":"image_picker",
+                  "id":"image",
+                  "label": "Image"
+              },
+              {
+                  "type":"text",
+                  "id":"link_text",
+                  "label":"Link text"
+              },
+              {
+                  "type":"url",
+                  "id":"link_url",
+                  "label":"URL"
+              }
+            ]
+          }
+    ]
+
+}
+{% endschema %}
+
+
+{% stylesheet %}
+
+
+{% endstylesheet %}
+
+{% javascript %}
+
+const navbar = document.getElementById('mainheader')
+
+// OnScroll event handler
+const onScroll = () => {
+
+  // Get scroll value
+  const scroll = document.documentElement.scrollTop
+
+  // If scroll value is more than 0 - add class
+  if (scroll > 180) {
+    navbar.classList.add("fixed-top");
+  } else {
+    navbar.classList.remove("fixed-top")
+  }
+}
+
+// Use the function
+window.addEventListener('scroll', onScroll)
+
+{% endjavascript %}
