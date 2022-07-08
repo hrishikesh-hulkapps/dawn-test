@@ -13,11 +13,11 @@
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "enable_quick_add": false,
+        "enable_quick_add": true,
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
@@ -25,27 +25,10 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "1657179118fd0277d5": {
-      "type": "apps",
-      "blocks": {
-        "6330d93e-89d5-42cb-8b7b-2d92c7446198": {
-          "type": "shopify:\/\/apps\/product-reviews-ugc-with-q-a\/blocks\/review-badge\/34006358-52bd-4ec7-8c78-200fe58b77ba",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "6330d93e-89d5-42cb-8b7b-2d92c7446198"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
     "banner",
-    "product-grid",
-    "1657179118fd0277d5"
+    "product-grid"
   ]
 }
