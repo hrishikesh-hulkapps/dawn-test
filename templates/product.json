@@ -380,22 +380,6 @@
       "settings": {
         "include_margins": true
       }
-    },
-    "16572734768fa039b5": {
-      "type": "apps",
-      "blocks": {
-        "b0bb8d61-c4e6-4061-bfb7-c0e860a1a13c": {
-          "type": "shopify:\/\/apps\/product-reviews-ugc-with-q-a\/blocks\/review-list\/34006358-52bd-4ec7-8c78-200fe58b77ba",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "b0bb8d61-c4e6-4061-bfb7-c0e860a1a13c"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
@@ -408,7 +392,6 @@
     "1657014658729b488c",
     "165701481356f0917c",
     "1657175850c106fb8b",
-    "16572725862657cde2",
-    "16572734768fa039b5"
+    "16572725862657cde2"
   ]
 }
