@@ -186,7 +186,7 @@
             {% endfor %}
             {% endunless %}
             
-            <select name="id" id="variants" class="select__select" hidden>
+            <select name="id" data-productid="{{ product.id }}" id="variants" class="select__select" hidden>
                 {%- for variant in product.variants -%}
                 {% for option in variant.option1 %}
                 <option {% if variant==product.selected_or_first_available_variant %}selected{% endif %}

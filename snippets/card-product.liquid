@@ -40,8 +40,8 @@
 	{% render 'hulkapps-wishlist-collection-btn', productId: card_product.id, variantId: card_product.selected_or_first_available_variant.id %}
     
      <!-- Add to cart btn  -->
-     <form method="post" action="/cart/add">
-      <input type="hidden" name="id" value="{{ card_product.variants.first.id }}" />
+     <form method="post" action="/cart/add" data-productid="{{ product.id }}">
+      <input type="hidden" name="id" data-productid="{{ product.id }}" value="{{ card_product.variants.first.id }}" />
       <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
       <input type="submit" value="Add to cart" class="btn btn-outline-dark btn-lg" />
     
@@ -205,7 +205,7 @@
             {%- if card_product.has_only_default_variant -%}
               <product-form>
                 {%- form 'product', card_product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-                  <input type="hidden" name="id" value="{{ card_product.selected_or_first_available_variant.id }}" disabled>
+                  <input type="hidden" name="id" data-productid="{{ product.id }}" value="{{ card_product.selected_or_first_available_variant.id }}" disabled>
                   <button
                     id="{{ product_form_id }}-submit"
                     type="submit"
